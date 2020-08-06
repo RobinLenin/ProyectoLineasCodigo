@@ -119,7 +119,40 @@ public class Archivos {
                 switch (lenguaje) {
                     case "Proyecto PHP":
 
-                        
+                        if (linea.length() > 1) {
+
+                            if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                comentario_largo = true;
+
+                                lineas_no_codigo++;
+
+                            }
+                            if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                comentario_largo = false;
+
+                            }
+                        }
+
+                        if (comentario_largo == false) {
+
+                            if (linea.length() > 1) {
+
+                                if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
+
+                                    lineas_no_codigo++;
+
+                                }
+                            }
+
+                            if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                    || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                lineas_no_codigo++;
+
+                            }
+                        }
 
                         break;
 
@@ -163,7 +196,40 @@ public class Archivos {
                         break;
 
                     case "Proyecto Node":
-                        
+                        if (linea.length() > 1) {
+
+                            if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                comentario_largo = true;
+
+                                lineas_no_codigo++;
+
+                            }
+                            if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                comentario_largo = false;
+
+                            }
+                        }
+
+                        if (comentario_largo == false) {
+
+                            if (linea.length() > 1) {
+
+                                if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
+
+                                    lineas_no_codigo++;
+
+                                }
+                            }
+
+                            if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                    || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                lineas_no_codigo++;
+
+                            }
+                        }
 
                         break;
                     default:
