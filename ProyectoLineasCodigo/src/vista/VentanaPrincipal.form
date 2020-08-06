@@ -301,6 +301,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Factor Ajuste"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_factor_ajusteActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

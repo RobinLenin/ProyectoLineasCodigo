@@ -156,6 +156,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jtf_modo_metrica.setEditable(false);
 
         btn_factor_ajuste.setText("Factor Ajuste");
+        btn_factor_ajuste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_factor_ajusteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,6 +319,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_reporteActionPerformed
+
+    private void btn_factor_ajusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_factor_ajusteActionPerformed
+        FactorAjuste fa = new FactorAjuste();
+
+        fa.setVisible(true);
+                                                  
+
+    }//GEN-LAST:event_btn_factor_ajusteActionPerformed
 
     /**
      * @param args the command line arguments
