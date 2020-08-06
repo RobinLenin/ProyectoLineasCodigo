@@ -21,13 +21,13 @@ import modelo.Archivo;
  */
 public class Archivos {
 
-    public static Collection<File> buscarArchivos(File carpeta, String lenguaje) {
+   public static Collection<File> buscarArchivos(File carpeta, String lenguaje) {
 
         String string_ruta = "";
 
         Set<File> archivos = new HashSet<File>();
 
-        if (carpeta.exists()) {
+        if (carpeta.exists() && carpeta.isDirectory()) {
             if (carpeta.listFiles().equals("")) {
 
                 return archivos;
@@ -40,12 +40,23 @@ public class Archivos {
                         string_ruta = archivo.getAbsoluteFile().toString();
 
                         int posicion = string_ruta.length();
-                        System.out.println(posicion);
-                        System.out.println(string_ruta);
+                        //System.out.println(posicion);
+                        //System.out.println(string_ruta);
                         String extension = string_ruta.substring(posicion - 3, posicion);
-                        System.out.println(extension);
+                        //System.out.println(extension);
 
-                        archivos.add(archivo);
+                        if (lenguaje.equals("Proyecto PHP") && extension.equals("php")) {
+                            archivos.add(archivo);
+                        } else {
+                            if (lenguaje.equals("Proyecto Node") && extension.equals(".js")) {
+                                archivos.add(archivo);
+                            } else {
+                                if (lenguaje.equals("Proyecto Java") && extension.equals("ava")) {
+                                    archivos.add(archivo);
+                                }
+
+                            }
+                        }
 
                     } else {
 
@@ -66,6 +77,9 @@ public class Archivos {
         String lenguaje = a.getLenguaje_progamacion();
 
         int lineas_codigo = 0;
+
+        int lineas_no_codigo = 0;
+
         File archivo = new File(a.getRuta());
 
         FileReader file_reader = null;
@@ -87,10 +101,77 @@ public class Archivos {
 
             String linea = "";
 
+            boolean comentario_largo = false;
 
             while ((linea = buffer_reader.readLine()) != null) {
-                lineas_codigo ++;
-                System.out.println(linea);
+
+                linea = linea.trim();
+
+                if (comentario_largo == false) {
+
+                    if (linea.length() > 0) {
+
+                        lineas_codigo++;
+
+                    }
+                }
+
+                switch (lenguaje) {
+                    case "Proyecto PHP":
+
+                        
+
+                        break;
+
+                    case "Proyecto Java":
+
+                        if (linea.length() > 1) {
+
+                            if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                comentario_largo = true;
+
+                                lineas_no_codigo++;
+
+                            }
+                            if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                comentario_largo = false;
+
+                            }
+                        }
+
+                        if (comentario_largo == false) {
+
+                            if (linea.length() > 1) {
+
+                                if (linea.substring(0, 2).equalsIgnoreCase("//")) {
+
+                                    lineas_no_codigo++;
+
+                                }
+                            }
+
+                            if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                    || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                lineas_no_codigo++;
+
+                            }
+                        }
+
+                        break;
+
+                    case "Proyecto Node":
+                        
+
+                        break;
+                    default:
+                        lineas_no_codigo = 0;
+                        break;
+
+                }
+                linea = "";
             }
         } catch (IOException e) {
 
@@ -98,8 +179,7 @@ public class Archivos {
 
         }
 
-        return lineas_codigo;
+        return lineas_codigo - lineas_no_codigo;
     }
-    
-    
+
 }
