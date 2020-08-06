@@ -61,4 +61,45 @@ public class Archivos {
         return archivos;
     }
 
+    public static int calcularLineasCodigo(Archivo a) {
+
+        String lenguaje = a.getLenguaje_progamacion();
+
+        int lineas_codigo = 0;
+        File archivo = new File(a.getRuta());
+
+        FileReader file_reader = null;
+
+        BufferedReader buffer_reader = null;
+
+        try {
+
+            file_reader = new FileReader(archivo);
+
+            buffer_reader = new BufferedReader(file_reader);
+
+        } catch (FileNotFoundException e) {
+
+            System.out.println("No se encontro el archivo " + archivo.getName());
+        }
+
+        try {
+
+            String linea = "";
+
+
+            while ((linea = buffer_reader.readLine()) != null) {
+                
+                System.out.println(linea);
+            }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+        return lineas_codigo;
+    }
+    
+    
 }
