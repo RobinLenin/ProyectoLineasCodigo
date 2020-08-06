@@ -26,18 +26,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="lbl_modo_metrica" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jcbx_modo_metrica" min="-2" pref="78" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                      <Component id="lbl_salario_medio" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jtf_salario" min="-2" pref="83" max="-2" attributes="0"/>
-                      <EmptySpace pref="186" max="32767" attributes="0"/>
-                      <Component id="btn_reporte" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
@@ -61,15 +49,31 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="lbl_modo_metrica" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="lbl_total" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jtxf_total_numero_lineas" min="-2" pref="125" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jtf_modo_metrica" min="-2" pref="95" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="lbl_salario_medio" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jtf_salario" min="-2" pref="83" max="-2" attributes="0"/>
+                              <EmptySpace pref="186" max="32767" attributes="0"/>
+                              <Component id="btn_reporte" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="lbl_total" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jtxf_total_numero_lineas" min="-2" pref="125" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,15 +102,15 @@
                   <Component id="jtxf_total_numero_lineas" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="lbl_total" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_modo_metrica" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jcbx_modo_metrica" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_salario_medio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtf_salario" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_reporte" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_modo_metrica" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -247,31 +251,23 @@
         <Property name="text" type="java.lang.String" value="Modo M&#xe9;trica COCOMO2:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jcbx_modo_metrica">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Org&#xe1;nico"/>
-            <StringItem index="1" value="Semilibre"/>
-            <StringItem index="2" value="R&#xed;gido"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JLabel" name="lbl_salario_medio">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salario Mensual:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtf_salario">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btn_reporte">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver Reporte"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_reporteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxf_total_numero_lineas">
     </Component>
@@ -279,6 +275,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Total:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtf_modo_metrica">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
