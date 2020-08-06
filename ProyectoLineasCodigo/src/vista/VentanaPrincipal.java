@@ -268,7 +268,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 int lineas_codigo = con_archivos.calcularLineasCodigo(a);
                 a.setNumero_lineas(lineas_codigo);
             }
+            mostrar_matriz2();
+
         }
+        
+        
     }//GEN-LAST:event_btn_calcularActionPerformed
 
     /**
@@ -353,5 +357,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jtf_total_archivos.setText(Integer.toString(lista_archivo.size()));
 
+    }
+
+    private void mostrar_matriz2() {
+        String matriz[][] = new String[lista_archivo.size()][3];
+        int total_numero_lineas = 0;
+
+        for (int i = 0; i < lista_archivo.size(); i++) {
+
+            matriz[i][0] = Integer.toString(i + 1);
+            matriz[i][1] = lista_archivo.get(i).getNombre();
+            matriz[i][2] = Integer.toString(lista_archivo.get(i).getNumero_lineas());
+
+            total_numero_lineas = total_numero_lineas + lista_archivo.get(i).getNumero_lineas();
+        }
+        
+        n_lines = total_numero_lineas;
+
+        tbl_mostrar_lineas_cod.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "#", "Nombre de la clase", "Líneas de Código"
+                }
+        ) {
+            boolean[] canEdit = new boolean[]{
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        });
+
+        jtxf_total_numero_lineas.setText(Integer.toString(total_numero_lineas));
+        
     }
 }

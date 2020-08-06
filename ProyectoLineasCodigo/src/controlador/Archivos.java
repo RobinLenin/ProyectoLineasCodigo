@@ -89,7 +89,7 @@ public class Archivos {
 
 
             while ((linea = buffer_reader.readLine()) != null) {
-                
+                lineas_codigo ++;
                 System.out.println(linea);
             }
         } catch (IOException e) {
