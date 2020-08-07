@@ -23,6 +23,41 @@ public class FactorAjuste extends javax.swing.JFrame {
      */
     public FactorAjuste() {
         initComponents();
+        
+        ArrayList<Integer> atributos = VentanaPrincipal.atributos;
+        if (atributos.size() > 0) {
+      
+        cbx_fiabilidad.setSelectedIndex(atributos.get(0));
+        
+        cbx_base_datos.setSelectedIndex(atributos.get(1));
+        
+        cbx_complejidad.setSelectedIndex(atributos.get(2));
+        
+        cbx_restr_tiempo_ejecucion.setSelectedIndex(atributos.get(3));
+       
+        cbx_rest_memoria_virtual.setSelectedIndex(atributos.get(4));
+        
+        cbx_vol_maquina_virtual.setSelectedIndex(atributos.get(5));
+        
+        cbx_tiempo_respuesta.setSelectedIndex(atributos.get(6));
+        
+        cbx_analisis.setSelectedIndex(atributos.get(7));
+        
+        cbx_experiencia.setSelectedIndex(atributos.get(8));
+        
+        cbx_calidad.setSelectedIndex(atributos.get(9));
+        
+        cbx_expe_maquina_virtual.setSelectedIndex(atributos.get(10));
+        
+        cbx_expe_lenguaje.setSelectedIndex(atributos.get(11));
+        
+        cbx_tecnicas.setSelectedIndex(atributos.get(12));
+        
+        cbx_herramientas.setSelectedIndex(atributos.get(13));
+        
+        cbx_rest_tiempo_desarrollo.setSelectedIndex(atributos.get(14));    
+        }
+        
     }
 
     /**
@@ -71,7 +106,7 @@ public class FactorAjuste extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         btn_aceptar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lbl_atrib_software.setText("Atributos del Software");
 

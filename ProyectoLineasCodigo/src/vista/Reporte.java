@@ -85,7 +85,7 @@ public class Reporte extends javax.swing.JFrame {
         jtf_costo_proyecto = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lbl_n_lineas.setText("Número de Líneas del Proyecto(KLOC): ");
 
