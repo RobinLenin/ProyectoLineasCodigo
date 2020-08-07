@@ -103,7 +103,90 @@ public class Reportes {
             }
         }
         
-        return factor_ajuste/3;
+        fa =  constantes.restrTiempoEjecucion();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.restMemoriaVirtual();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.volMaquinaVirtual();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.tiempoRespuesta();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.analisis();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.experiencia();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.Calidad();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.expeMaquinaVirtual();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.expeLenguaje();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.tecnicas();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        fa =  constantes.herramientas();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        
+        fa =  constantes.restTiempoDesarrollo();
+        for (int i = 0; i <fa.size() ; i++) {
+            if (atributos.get(3) == i) {
+                factor_ajuste = factor_ajuste + fa.get(i);
+            }
+        }
+        return factor_ajuste/15;
+        
     }
 
 }
