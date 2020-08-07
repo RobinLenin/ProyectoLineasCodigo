@@ -21,6 +21,8 @@ import modelo.Archivo;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     public static int n_lines = 0;
+    
+    public static double factor_ajuste = 1.0;
 
     //FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos js,class y py ", "js", "py", "class", "java");
     JFileChooser seleccionar_proyecto = new JFileChooser();
@@ -34,6 +36,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     Collection<File> archivos;
 
     ArrayList<Archivo> lista_archivo = new ArrayList<Archivo>();
+    
+    public static ArrayList<Integer> atributos = new ArrayList<>();
 
     public VentanaPrincipal() {
         initComponents();
@@ -156,6 +160,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jtf_modo_metrica.setEditable(false);
 
         btn_factor_ajuste.setText("Factor Ajuste");
+        btn_factor_ajuste.setEnabled(false);
         btn_factor_ajuste.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factor_ajusteActionPerformed(evt);
@@ -295,6 +300,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 a.setNumero_lineas(lineas_codigo);
             }
             mostrar_matriz2();
+            
+            btn_factor_ajuste.setEnabled(true);
 
         } else {
             JOptionPane.showMessageDialog(null, "Existen 0 archivos a calcuar");

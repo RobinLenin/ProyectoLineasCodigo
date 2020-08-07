@@ -28,8 +28,10 @@ public class Reporte extends javax.swing.JFrame {
         
         
         String modo = VentanaPrincipal.jtf_modo_metrica.getText();
+        
+        double mx = VentanaPrincipal.factor_ajuste; 
 
-        double esfuerzo = con_reportes.esfuerzo(lines, modo);
+        double esfuerzo = con_reportes.esfuerzo(lines, modo, mx);
         esfuerzo = Math.round(esfuerzo * Math.pow(10, 2)) / Math.pow(10, 2);
        
         jtf_esfuerzo.setText(Double.toString(esfuerzo));

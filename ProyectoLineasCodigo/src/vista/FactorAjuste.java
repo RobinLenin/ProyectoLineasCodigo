@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class FactorAjuste extends javax.swing.JFrame {
     
-    
+    Reportes con_reporte;
    
     /**
      * Creates new form FactorAjuste
@@ -324,9 +324,10 @@ public class FactorAjuste extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        this.dispose();
-        
-         
+        obtenerAtributos();
+               
+        this.setVisible(false);
+
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
@@ -404,4 +405,63 @@ public class FactorAjuste extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_atrib_software;
     // End of variables declaration//GEN-END:variables
 
+    private void obtenerAtributos() {
+        //https://es.stackoverflow.com/questions/8456/crear-una-lista-clave-valor-en-java
+        int atributo = 0;
+        ArrayList<Integer> atributos = new ArrayList<>();
+        
+        atributo  = cbx_fiabilidad.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_fiabilidad.setSelectedIndex(atributo);
+        atributo  = cbx_base_datos.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_base_datos.setSelectedIndex(atributo);
+        atributo  = cbx_complejidad.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_complejidad.setSelectedIndex(atributo);
+        atributo  = cbx_restr_tiempo_ejecucion.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_restr_tiempo_ejecucion.setSelectedIndex(atributo);
+        atributo  = cbx_rest_memoria_virtual.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_rest_memoria_virtual.setSelectedIndex(atributo);
+        atributo  = cbx_vol_maquina_virtual.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_vol_maquina_virtual.setSelectedIndex(atributo);
+        atributo  = cbx_tiempo_respuesta.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_tiempo_respuesta.setSelectedIndex(atributo);
+        atributo  = cbx_analisis.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_analisis.setSelectedIndex(atributo);
+        atributo  = cbx_experiencia.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_experiencia.setSelectedIndex(atributo);
+        atributo  = cbx_calidad.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_calidad.setSelectedIndex(atributo);
+        atributo  = cbx_expe_maquina_virtual.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_expe_maquina_virtual.setSelectedIndex(atributo);
+        atributo  = cbx_expe_lenguaje.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_expe_lenguaje.setSelectedIndex(atributo);
+        atributo  = cbx_tecnicas.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_tecnicas.setSelectedIndex(atributo);
+        atributo  = cbx_herramientas.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_herramientas.setSelectedIndex(atributo);
+        atributo  = cbx_rest_tiempo_desarrollo.getSelectedIndex();
+        atributos.add(atributo);
+        cbx_rest_tiempo_desarrollo.setSelectedIndex(atributo);
+        
+        double fa = con_reporte.calcularFactorAjuste(atributos);
+        
+        if (fa > 0) {
+            VentanaPrincipal.factor_ajuste = fa;
+        }
+        
+        VentanaPrincipal.atributos = atributos;
+    }
 }

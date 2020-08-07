@@ -45,5 +45,38 @@ public class Constantes {
         rig.add(0.32);
         return rig;    
     }
+    
+    //Constantes paraa factor de Ajuste
+    
+    
+    public ArrayList<Double> fiabilidad(){
+        ArrayList<Double> fiabilidad = new ArrayList<Double>();
+        fiabilidad.add(0.75);
+        fiabilidad.add(0.88);
+        fiabilidad.add(1.0);
+        fiabilidad.add(1.15);
+        fiabilidad.add(1.40);
+        return fiabilidad;
+    }
+    
+    public ArrayList<Double> baseDatos(){
+        ArrayList<Double> base_datos = new ArrayList<Double>();
+        base_datos.add(0.94);
+        base_datos.add(1.0);
+        base_datos.add(1.08);
+        base_datos.add(1.16);
+        return base_datos;
+    }
+    
+    public ArrayList<Double> complejidad(){
+        ArrayList<Double> complejidad = new ArrayList<Double>();
+        complejidad.add(0.70);
+        complejidad.add(0.85);
+        complejidad.add(1.0);
+        complejidad.add(1.15);
+        complejidad.add(1.30);
+        complejidad.add(1.65);
+        return complejidad;
+    }
            
 }
