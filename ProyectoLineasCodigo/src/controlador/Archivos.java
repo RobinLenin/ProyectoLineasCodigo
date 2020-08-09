@@ -60,7 +60,11 @@ public class Archivos {
 
                     } else {
 
-                        archivos.addAll(buscarArchivos(archivo, lenguaje));
+                        String nombre = archivo.getName();
+                        System.out.println(nombre);
+                        if (!nombre.equalsIgnoreCase("lib") || !nombre.equalsIgnoreCase("vendor") || !nombre.equalsIgnoreCase("middleware")) {
+                            archivos.addAll(buscarArchivos(archivo, lenguaje));
+                        }
 
                     }
                 }
@@ -140,6 +144,11 @@ public class Archivos {
                             if (linea.length() > 1) {
 
                                 if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
+
+                                    lineas_no_codigo++;
+
+                                }
+                                if (linea.equalsIgnoreCase("?>") || linea.equalsIgnoreCase("<?phps")) {
 
                                     lineas_no_codigo++;
 
