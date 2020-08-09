@@ -31,7 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     //FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos js,class y py ", "js", "py", "class", "java");
     JFileChooser seleccionar_proyecto = new JFileChooser();
 
-    File carpeta_proyecto;
+    public static File carpeta_proyecto;
 
     Archivos con_archivos;
 
