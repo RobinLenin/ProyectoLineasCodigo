@@ -43,6 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public VentanaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -54,33 +55,95 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_lenguaje_proyecto = new javax.swing.JLabel();
+        pnl_titulo = new javax.swing.JPanel();
+        lbl_titulo = new javax.swing.JLabel();
+        lbl_subtitulo = new javax.swing.JLabel();
+        pnl_cuerpo = new javax.swing.JPanel();
         jcbx_lenguaje_proyecto = new javax.swing.JComboBox<>();
-        btn_seleccionar_proj = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_mostrar_archivos = new javax.swing.JTable();
+        lbl_lenguaje_proyecto = new javax.swing.JLabel();
+        btn_seleccionar_proj = new rsbuttoncustom.RSButtonCustom();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbl_mostrar_archivos = new rojerusan.RSTableMetro();
         lbl_total_archivos = new javax.swing.JLabel();
         jtf_total_archivos = new javax.swing.JTextField();
-        btn_calcular = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbl_mostrar_lineas_cod = new javax.swing.JTable();
-        lbl_modo_metrica = new javax.swing.JLabel();
-        lbl_salario_medio = new javax.swing.JLabel();
-        jtf_salario = new javax.swing.JTextField();
-        btn_reporte = new javax.swing.JButton();
+        btn_calcular = new rsbuttoncustom.RSButtonCustom();
+        btn_refrescar = new rsbuttoncustom.RSButtonCustom();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_mostrar_lineas_cod = new rojerusan.RSTableMetro();
         jtxf_total_numero_lineas = new javax.swing.JTextField();
         lbl_total = new javax.swing.JLabel();
+        lbl_modo_metrica = new javax.swing.JLabel();
         jtf_modo_metrica = new javax.swing.JTextField();
-        btn_factor_ajuste = new javax.swing.JButton();
-        btn_refrescar = new javax.swing.JButton();
+        jtf_salario = new javax.swing.JTextField();
+        lbl_salario_medio = new javax.swing.JLabel();
+        btn_factor_ajuste = new rsbuttoncustom.RSButtonCustom();
+        btn_reporte = new rsbuttoncustom.RSButtonCustom();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Métricas código fuente (Líneas de Código)");
+        setMaximumSize(new java.awt.Dimension(965, 700));
+        setMinimumSize(new java.awt.Dimension(965, 700));
+        setPreferredSize(new java.awt.Dimension(965, 700));
+        setResizable(false);
 
-        lbl_lenguaje_proyecto.setText("Lenguaje del Proyeto:");
+        pnl_titulo.setBackground(new java.awt.Color(246, 149, 7));
+        pnl_titulo.setMaximumSize(new java.awt.Dimension(965, 150));
+        pnl_titulo.setMinimumSize(new java.awt.Dimension(965, 150));
+        pnl_titulo.setPreferredSize(new java.awt.Dimension(965, 150));
 
+        lbl_titulo.setFont(new java.awt.Font("Cambria Math", 1, 36)); // NOI18N
+        lbl_titulo.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo.setText("MÉTRICAS CÓDIGO FUENTE");
+
+        lbl_subtitulo.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        lbl_subtitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_subtitulo.setText("COCOMO II");
+
+        javax.swing.GroupLayout pnl_tituloLayout = new javax.swing.GroupLayout(pnl_titulo);
+        pnl_titulo.setLayout(pnl_tituloLayout);
+        pnl_tituloLayout.setHorizontalGroup(
+            pnl_tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tituloLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tituloLayout.createSequentialGroup()
+                        .addComponent(lbl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(216, 216, 216))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tituloLayout.createSequentialGroup()
+                        .addComponent(lbl_subtitulo)
+                        .addGap(410, 410, 410))))
+        );
+        pnl_tituloLayout.setVerticalGroup(
+            pnl_tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_tituloLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(lbl_titulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl_subtitulo)
+                .addGap(532, 532, 532))
+        );
+
+        lbl_subtitulo.getAccessibleContext().setAccessibleName("lbl_subtitulo");
+
+        pnl_cuerpo.setBackground(new java.awt.Color(45, 60, 80));
+        pnl_cuerpo.setMaximumSize(new java.awt.Dimension(965, 540));
+        pnl_cuerpo.setMinimumSize(new java.awt.Dimension(965, 540));
+        pnl_cuerpo.setPreferredSize(new java.awt.Dimension(965, 540));
+
+        jcbx_lenguaje_proyecto.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         jcbx_lenguaje_proyecto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Proyecto PHP", "Proyecto Java", "Proyecto Node js" }));
 
-        btn_seleccionar_proj.setText("Adicionar Proyecto");
+        lbl_lenguaje_proyecto.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_lenguaje_proyecto.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_lenguaje_proyecto.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_lenguaje_proyecto.setText("Lenguaje del Proyeto:");
+
+        btn_seleccionar_proj.setBackground(new java.awt.Color(45, 60, 80));
+        btn_seleccionar_proj.setForeground(new java.awt.Color(255, 255, 255));
+        btn_seleccionar_proj.setText("Seleccionar Proyecto");
+        btn_seleccionar_proj.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
         btn_seleccionar_proj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_seleccionar_projActionPerformed(evt);
@@ -95,35 +158,59 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "#", "Nombre de la clase", "Lenguaje"
+                "#", "Nombre de la Clase", "Lenguaje"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true
+                false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbl_mostrar_archivos);
+        tbl_mostrar_archivos.setColorBackgoundHead(new java.awt.Color(246, 149, 7));
+        tbl_mostrar_archivos.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tbl_mostrar_archivos.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_archivos.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_archivos.setColorSelBackgound(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_archivos.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_archivos.setFuenteFilas(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_archivos.setFuenteFilasSelect(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_archivos.setFuenteHead(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        tbl_mostrar_archivos.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane3.setViewportView(tbl_mostrar_archivos);
         if (tbl_mostrar_archivos.getColumnModel().getColumnCount() > 0) {
             tbl_mostrar_archivos.getColumnModel().getColumn(0).setMinWidth(30);
             tbl_mostrar_archivos.getColumnModel().getColumn(0).setMaxWidth(30);
-            tbl_mostrar_archivos.getColumnModel().getColumn(1).setMinWidth(240);
-            tbl_mostrar_archivos.getColumnModel().getColumn(2).setMinWidth(80);
-            tbl_mostrar_archivos.getColumnModel().getColumn(2).setMaxWidth(80);
+            tbl_mostrar_archivos.getColumnModel().getColumn(1).setMinWidth(150);
+            tbl_mostrar_archivos.getColumnModel().getColumn(2).setMinWidth(120);
+            tbl_mostrar_archivos.getColumnModel().getColumn(2).setMaxWidth(120);
         }
 
+        lbl_total_archivos.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_total_archivos.setForeground(new java.awt.Color(255, 255, 255));
         lbl_total_archivos.setText("Total Archivos:");
 
         jtf_total_archivos.setEditable(false);
 
+        btn_calcular.setBackground(new java.awt.Color(45, 60, 80));
+        btn_calcular.setForeground(new java.awt.Color(255, 255, 255));
         btn_calcular.setText("Calcular");
-        btn_calcular.setEnabled(false);
+        btn_calcular.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
         btn_calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_calcularActionPerformed(evt);
+            }
+        });
+
+        btn_refrescar.setBackground(new java.awt.Color(45, 60, 80));
+        btn_refrescar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_refrescar.setText("Limpiar");
+        btn_refrescar.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        btn_refrescar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_refrescarActionPerformed(evt);
             }
         });
 
@@ -135,134 +222,177 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "#", "Nombre de la clase", "Líneas de Código"
+                "#", "Nombre de la Clase", "Líneas de Código"
             }
-        ));
-        jScrollPane2.setViewportView(tbl_mostrar_lineas_cod);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_mostrar_lineas_cod.setColorBackgoundHead(new java.awt.Color(246, 149, 7));
+        tbl_mostrar_lineas_cod.setColorFilasBackgound2(new java.awt.Color(255, 255, 255));
+        tbl_mostrar_lineas_cod.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_lineas_cod.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_lineas_cod.setColorSelBackgound(new java.awt.Color(0, 0, 0));
+        tbl_mostrar_lineas_cod.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_lineas_cod.setFuenteFilas(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_lineas_cod.setFuenteFilasSelect(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        tbl_mostrar_lineas_cod.setFuenteHead(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        tbl_mostrar_lineas_cod.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(tbl_mostrar_lineas_cod);
         if (tbl_mostrar_lineas_cod.getColumnModel().getColumnCount() > 0) {
             tbl_mostrar_lineas_cod.getColumnModel().getColumn(0).setMinWidth(30);
             tbl_mostrar_lineas_cod.getColumnModel().getColumn(0).setMaxWidth(30);
-            tbl_mostrar_lineas_cod.getColumnModel().getColumn(1).setMinWidth(150);
-            tbl_mostrar_lineas_cod.getColumnModel().getColumn(2).setMinWidth(120);
-            tbl_mostrar_lineas_cod.getColumnModel().getColumn(2).setMaxWidth(120);
+            tbl_mostrar_lineas_cod.getColumnModel().getColumn(1).setMinWidth(140);
+            tbl_mostrar_lineas_cod.getColumnModel().getColumn(2).setMinWidth(130);
+            tbl_mostrar_lineas_cod.getColumnModel().getColumn(2).setMaxWidth(130);
         }
 
-        lbl_modo_metrica.setText("Modo Métrica COCOMO2:");
+        lbl_total.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_total.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_total.setText("Total Líneas:");
 
-        lbl_salario_medio.setText("Salario Mensual:");
-
-        btn_reporte.setText("Ver Reporte");
-        btn_reporte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_reporteActionPerformed(evt);
-            }
-        });
-
-        lbl_total.setText("Total:");
+        lbl_modo_metrica.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_modo_metrica.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_modo_metrica.setText("Modo Métrica COCOMO II:");
 
         jtf_modo_metrica.setEditable(false);
 
+        lbl_salario_medio.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_salario_medio.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_salario_medio.setText("Salario Mensual:");
+
+        btn_factor_ajuste.setBackground(new java.awt.Color(45, 60, 80));
+        btn_factor_ajuste.setForeground(new java.awt.Color(255, 255, 255));
         btn_factor_ajuste.setText("Factor Ajuste");
-        btn_factor_ajuste.setEnabled(false);
+        btn_factor_ajuste.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
         btn_factor_ajuste.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factor_ajusteActionPerformed(evt);
             }
         });
 
-        btn_refrescar.setText("Refrescar");
-        btn_refrescar.addActionListener(new java.awt.event.ActionListener() {
+        btn_reporte.setBackground(new java.awt.Color(45, 60, 80));
+        btn_reporte.setForeground(new java.awt.Color(255, 255, 255));
+        btn_reporte.setText("Ver Reporte");
+        btn_reporte.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        btn_reporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_refrescarActionPerformed(evt);
+                btn_reporteActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout pnl_cuerpoLayout = new javax.swing.GroupLayout(pnl_cuerpo);
+        pnl_cuerpo.setLayout(pnl_cuerpoLayout);
+        pnl_cuerpoLayout.setHorizontalGroup(
+            pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_cuerpoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_cuerpoLayout.createSequentialGroup()
+                        .addComponent(lbl_lenguaje_proyecto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jcbx_lenguaje_proyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_seleccionar_proj, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(107, 107, 107))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                        .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnl_cuerpoLayout.createSequentialGroup()
+                                .addGap(229, 229, 229)
+                                .addComponent(btn_factor_ajuste, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_reporte, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_cuerpoLayout.createSequentialGroup()
+                                .addComponent(lbl_modo_metrica)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtf_modo_metrica, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_total)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jtxf_total_numero_lineas, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                        .addComponent(lbl_total_archivos)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtf_total_archivos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                        .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                        .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(164, 164, 164)
+                        .addComponent(btn_refrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(287, 287, 287))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_cuerpoLayout.createSequentialGroup()
+                        .addComponent(lbl_salario_medio)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtf_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(341, 341, 341))))
+        );
+        pnl_cuerpoLayout.setVerticalGroup(
+            pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_cuerpoLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_lenguaje_proyecto)
+                    .addComponent(jcbx_lenguaje_proyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_seleccionar_proj, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_total_archivos)
+                    .addComponent(jtf_total_archivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_refrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_modo_metrica)
+                    .addComponent(jtf_modo_metrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_total)
+                    .addComponent(jtxf_total_numero_lineas, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_salario_medio)
+                    .addComponent(jtf_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_cuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_factor_ajuste, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btn_reporte, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnl_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(21, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2)
-                            .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lbl_total_archivos)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtf_total_archivos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_lenguaje_proyecto)
-                                .addGap(39, 39, 39)
-                                .addComponent(jcbx_lenguaje_proyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_seleccionar_proj, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(btn_refrescar)
-                                .addGap(32, 32, 32))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(lbl_modo_metrica)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_total)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtxf_total_numero_lineas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jtf_modo_metrica, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_factor_ajuste)
-                                .addGap(87, 87, 87)
-                                .addComponent(lbl_salario_medio)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtf_salario, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(btn_reporte)))))
-                .addContainerGap())
+                .addComponent(pnl_cuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_lenguaje_proyecto)
-                    .addComponent(jcbx_lenguaje_proyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_seleccionar_proj, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_refrescar))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_total_archivos)
-                    .addComponent(jtf_total_archivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxf_total_numero_lineas, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_total))
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_modo_metrica)
-                            .addComponent(btn_reporte)
-                            .addComponent(jtf_modo_metrica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_factor_ajuste))
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_salario_medio)
-                            .addComponent(jtf_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                .addComponent(pnl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnl_cuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -305,7 +435,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_seleccionar_projActionPerformed
 
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
-
         if (!archivos.isEmpty()) {
             for (Archivo a : lista_archivo) {
                 int lineas_codigo = con_archivos.calcularLineasCodigo(a);
@@ -318,9 +447,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Existen 0 archivos a calcuar");
         }
-
-
     }//GEN-LAST:event_btn_calcularActionPerformed
+
+    private void btn_refrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refrescarActionPerformed
+        n_lines = 0;
+
+        factor_ajuste = 1.0;
+
+        archivos = new HashSet<File>();
+
+        lista_archivo = new ArrayList<Archivo>();
+
+        atributos = new ArrayList<Integer>();
+
+        btn_calcular.setEnabled(false);
+
+        jtf_modo_metrica.setText("");
+
+        jtf_salario.setText("");
+
+        jtf_total_archivos.setText("");
+
+        jtxf_total_numero_lineas.setText("");
+
+        eliminarTabla(tbl_mostrar_archivos);
+
+        eliminarTabla(tbl_mostrar_lineas_cod);
+    }//GEN-LAST:event_btn_refrescarActionPerformed
+
+    private void btn_factor_ajusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_factor_ajusteActionPerformed
+        FactorAjuste fa = new FactorAjuste();
+
+        fa.setVisible(true);
+    }//GEN-LAST:event_btn_factor_ajusteActionPerformed
 
     private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
         String salario = jtf_salario.getText();
@@ -338,36 +497,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_reporteActionPerformed
-
-    private void btn_factor_ajusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_factor_ajusteActionPerformed
-        FactorAjuste fa = new FactorAjuste();
-
-        fa.setVisible(true);
-
-
-    }//GEN-LAST:event_btn_factor_ajusteActionPerformed
-
-    private void btn_refrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_refrescarActionPerformed
-        n_lines = 0;
-
-        factor_ajuste = 1.0;
-
-        archivos = new HashSet<File>();
-
-        lista_archivo = new ArrayList<Archivo>();
-
-        atributos = new ArrayList<Integer>();
-        
-        btn_calcular.setEnabled(false);
-        
-        jtf_modo_metrica.setText("");
-        jtf_salario.setText("");
-        jtf_total_archivos.setText("");
-        jtxf_total_numero_lineas.setText("");        
-        eliminarTabla(tbl_mostrar_archivos);
-        eliminarTabla(tbl_mostrar_lineas_cod);
-        
-    }//GEN-LAST:event_btn_refrescarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,13 +534,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_calcular;
-    private javax.swing.JButton btn_factor_ajuste;
-    private javax.swing.JButton btn_refrescar;
-    private javax.swing.JButton btn_reporte;
-    private javax.swing.JButton btn_seleccionar_proj;
+    private rsbuttoncustom.RSButtonCustom btn_calcular;
+    private rsbuttoncustom.RSButtonCustom btn_factor_ajuste;
+    private rsbuttoncustom.RSButtonCustom btn_refrescar;
+    private rsbuttoncustom.RSButtonCustom btn_reporte;
+    private rsbuttoncustom.RSButtonCustom btn_seleccionar_proj;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JComboBox<String> jcbx_lenguaje_proyecto;
     public static javax.swing.JTextField jtf_modo_metrica;
     public static javax.swing.JTextField jtf_salario;
@@ -420,10 +549,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_lenguaje_proyecto;
     private javax.swing.JLabel lbl_modo_metrica;
     private javax.swing.JLabel lbl_salario_medio;
+    private javax.swing.JLabel lbl_subtitulo;
+    private javax.swing.JLabel lbl_titulo;
     private javax.swing.JLabel lbl_total;
     private javax.swing.JLabel lbl_total_archivos;
-    private javax.swing.JTable tbl_mostrar_archivos;
-    private javax.swing.JTable tbl_mostrar_lineas_cod;
+    private javax.swing.JPanel pnl_cuerpo;
+    private javax.swing.JPanel pnl_titulo;
+    private rojerusan.RSTableMetro tbl_mostrar_archivos;
+    private rojerusan.RSTableMetro tbl_mostrar_lineas_cod;
     // End of variables declaration//GEN-END:variables
 
     private void mostrar_matriz1() {
