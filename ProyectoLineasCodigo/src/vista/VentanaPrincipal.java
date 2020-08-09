@@ -11,6 +11,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -44,6 +46,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+
+    }
+
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/Icono.png"));
+        return retValue;
     }
 
     /**
@@ -81,6 +89,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Métricas código fuente (Líneas de Código)");
+        setIconImage(getIconImage());
         setMaximumSize(new java.awt.Dimension(965, 700));
         setMinimumSize(new java.awt.Dimension(965, 700));
         setPreferredSize(new java.awt.Dimension(965, 700));
@@ -642,10 +651,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     private void eliminarTabla(JTable tabla) {
-        for (int i = 0; i < tabla.getRowCount(); i++)
-         for(int j = 0; j < tabla.getColumnCount(); j++) {
-             tabla.setValueAt("", i, j);
-         }
-      }
+        for (int i = 0; i < tabla.getRowCount(); i++) {
+            for (int j = 0; j < tabla.getColumnCount(); j++) {
+                tabla.setValueAt("", i, j);
+            }
+        }
+    }
 
 }

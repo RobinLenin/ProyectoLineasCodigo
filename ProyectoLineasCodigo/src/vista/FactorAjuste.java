@@ -15,49 +15,50 @@ import java.util.Map;
  * @author robin
  */
 public class FactorAjuste extends javax.swing.JFrame {
-    
+
     Reportes con_reporte;
-   
+
     /**
      * Creates new form FactorAjuste
      */
     public FactorAjuste() {
         initComponents();
-        
+        this.setLocationRelativeTo(null);
+
         ArrayList<Integer> atributos = VentanaPrincipal.atributos;
         if (atributos.size() > 0) {
-      
-        cbx_fiabilidad.setSelectedIndex(atributos.get(0));
-        
-        cbx_base_datos.setSelectedIndex(atributos.get(1));
-        
-        cbx_complejidad.setSelectedIndex(atributos.get(2));
-        
-        cbx_restr_tiempo_ejecucion.setSelectedIndex(atributos.get(3));
-       
-        cbx_rest_memoria_virtual.setSelectedIndex(atributos.get(4));
-        
-        cbx_vol_maquina_virtual.setSelectedIndex(atributos.get(5));
-        
-        cbx_tiempo_respuesta.setSelectedIndex(atributos.get(6));
-        
-        cbx_analisis.setSelectedIndex(atributos.get(7));
-        
-        cbx_experiencia.setSelectedIndex(atributos.get(8));
-        
-        cbx_calidad.setSelectedIndex(atributos.get(9));
-        
-        cbx_expe_maquina_virtual.setSelectedIndex(atributos.get(10));
-        
-        cbx_expe_lenguaje.setSelectedIndex(atributos.get(11));
-        
-        cbx_tecnicas.setSelectedIndex(atributos.get(12));
-        
-        cbx_herramientas.setSelectedIndex(atributos.get(13));
-        
-        cbx_rest_tiempo_desarrollo.setSelectedIndex(atributos.get(14));    
+
+            cbx_fiabilidad.setSelectedIndex(atributos.get(0));
+
+            cbx_base_datos.setSelectedIndex(atributos.get(1));
+
+            cbx_complejidad.setSelectedIndex(atributos.get(2));
+
+            cbx_restr_tiempo_ejecucion.setSelectedIndex(atributos.get(3));
+
+            cbx_rest_memoria_virtual.setSelectedIndex(atributos.get(4));
+
+            cbx_vol_maquina_virtual.setSelectedIndex(atributos.get(5));
+
+            cbx_tiempo_respuesta.setSelectedIndex(atributos.get(6));
+
+            cbx_analisis.setSelectedIndex(atributos.get(7));
+
+            cbx_experiencia.setSelectedIndex(atributos.get(8));
+
+            cbx_calidad.setSelectedIndex(atributos.get(9));
+
+            cbx_expe_maquina_virtual.setSelectedIndex(atributos.get(10));
+
+            cbx_expe_lenguaje.setSelectedIndex(atributos.get(11));
+
+            cbx_tecnicas.setSelectedIndex(atributos.get(12));
+
+            cbx_herramientas.setSelectedIndex(atributos.get(13));
+
+            cbx_rest_tiempo_desarrollo.setSelectedIndex(atributos.get(14));
         }
-        
+
     }
 
     /**
@@ -69,290 +70,397 @@ public class FactorAjuste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         lbl_atrib_software = new javax.swing.JLabel();
-        lbl_atrib_hardware = new javax.swing.JLabel();
-        lbl_atrib_personal = new javax.swing.JLabel();
-        lbl_atrib_proyecto = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        cbx_fiabilidad = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        cbx_base_datos = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        cbx_complejidad = new javax.swing.JComboBox<>();
+        lbl_atrib_hardware = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        cbx_restr_tiempo_ejecucion = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        cbx_rest_memoria_virtual = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
+        cbx_vol_maquina_virtual = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        cbx_tiempo_respuesta = new javax.swing.JComboBox<>();
+        lbl_atrib_personal = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        cbx_fiabilidad = new javax.swing.JComboBox<>();
-        cbx_base_datos = new javax.swing.JComboBox<>();
-        cbx_complejidad = new javax.swing.JComboBox<>();
-        cbx_restr_tiempo_ejecucion = new javax.swing.JComboBox<>();
-        cbx_rest_memoria_virtual = new javax.swing.JComboBox<>();
-        cbx_vol_maquina_virtual = new javax.swing.JComboBox<>();
-        cbx_tiempo_respuesta = new javax.swing.JComboBox<>();
-        cbx_analisis = new javax.swing.JComboBox<>();
-        cbx_experiencia = new javax.swing.JComboBox<>();
-        cbx_calidad = new javax.swing.JComboBox<>();
-        cbx_expe_maquina_virtual = new javax.swing.JComboBox<>();
         cbx_expe_lenguaje = new javax.swing.JComboBox<>();
+        cbx_expe_maquina_virtual = new javax.swing.JComboBox<>();
+        cbx_calidad = new javax.swing.JComboBox<>();
+        cbx_experiencia = new javax.swing.JComboBox<>();
+        cbx_analisis = new javax.swing.JComboBox<>();
+        lbl_atrib_proyecto = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         cbx_tecnicas = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
         cbx_herramientas = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
         cbx_rest_tiempo_desarrollo = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        btn_aceptar = new javax.swing.JButton();
+        btn_aceptar = new rsbuttoncustom.RSButtonCustom();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Factor Ajuste (15 Atributos)");
+        setResizable(false);
 
-        lbl_atrib_software.setText("Atributos del Software");
+        jPanel1.setBackground(new java.awt.Color(246, 149, 7));
 
-        lbl_atrib_hardware.setText("Atributos del Hardware");
+        jLabel16.setFont(new java.awt.Font("Cambria Math", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("FACTOR AJUSTE");
 
-        lbl_atrib_personal.setText("Atributos Personal");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jLabel16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
 
-        lbl_atrib_proyecto.setText("Atributos del Proyecto");
+        jPanel2.setBackground(new java.awt.Color(45, 60, 80));
 
+        lbl_atrib_software.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_atrib_software.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_atrib_software.setText("Atributos del Software:");
+
+        jLabel1.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Fiabilidad:");
 
-        jLabel2.setText("Tamaño Base de Datos:");
-
-        jLabel3.setText("Complejidad:");
-
-        jLabel4.setText("Restricciones de tiempo de ejecución:");
-
-        jLabel5.setText("Restricciones de memoria virtual:");
-
-        jLabel6.setText("Volatilidad de la máquina virtual:");
-
-        jLabel7.setText("Tiempo de respuesta:");
-
-        jLabel8.setText("Capacidad de análisis:");
-
-        jLabel9.setText("Experiencia en la aplicación:");
-
-        jLabel10.setText("Calidad de los programadores:");
-
-        jLabel11.setText("Experiencia en la máquina virtual:");
-
-        jLabel12.setText("Experiencia en el lenguaje:");
-
-        jLabel13.setText("Técnicas actualizadas de programación:");
-
-        jLabel14.setText("Utilización de herramientas de software:");
-
-        jLabel15.setText("Restricciones de tiempo de desarrollo:");
-
+        cbx_fiabilidad.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_fiabilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_fiabilidad.setSelectedIndex(2);
 
+        jLabel2.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Tamaño Base de Datos:");
+
+        cbx_base_datos.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_base_datos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_base_datos.setSelectedIndex(1);
 
+        jLabel3.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Complejidad:");
+
+        cbx_complejidad.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_complejidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto", "Extra Alto" }));
         cbx_complejidad.setSelectedIndex(2);
 
+        lbl_atrib_hardware.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_atrib_hardware.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_atrib_hardware.setText("Atributos del Hardware:");
+
+        jLabel4.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Restricciones de tiempo de ejecución:");
+
+        cbx_restr_tiempo_ejecucion.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_restr_tiempo_ejecucion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nominal", "Alto", "Muy Alto", "Extra Alto" }));
         cbx_restr_tiempo_ejecucion.setSelectedItem("Nominal");
 
+        jLabel5.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Restricciones de memoria virtual:");
+
+        cbx_rest_memoria_virtual.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_rest_memoria_virtual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nominal", "Alto", "Muy Alto", "Extra Alto" }));
         cbx_rest_memoria_virtual.setSelectedItem("Nominal");
 
-        cbx_vol_maquina_virtual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo", "Nominal", "Alto", "Muy Alto", " " }));
+        jLabel6.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Volatilidad de la máquina virtual:");
+
+        cbx_vol_maquina_virtual.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_vol_maquina_virtual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_vol_maquina_virtual.setSelectedItem("Nominal");
 
-        cbx_tiempo_respuesta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo", "Nominal", "Alto", "Muy Alto", " " }));
+        jLabel7.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Tiempo de respuesta:");
+
+        cbx_tiempo_respuesta.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_tiempo_respuesta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_tiempo_respuesta.setSelectedItem("Nominal");
 
-        cbx_analisis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto", " " }));
-        cbx_analisis.setSelectedItem("Nominal");
+        lbl_atrib_personal.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_atrib_personal.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_atrib_personal.setText("Atributos Personal:");
 
-        cbx_experiencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
-        cbx_experiencia.setSelectedItem("Nominal");
+        jLabel8.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Capacidad de análisis:");
 
+        jLabel9.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Experiencia en la aplicación:");
+
+        jLabel10.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Calidad de los programadores:");
+
+        jLabel11.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Experiencia en la máquina virtual:");
+
+        jLabel12.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Experiencia en el lenguaje:");
+
+        cbx_expe_lenguaje.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_expe_lenguaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto" }));
+        cbx_expe_lenguaje.setSelectedItem("Nominal");
+
+        cbx_expe_maquina_virtual.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_expe_maquina_virtual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto" }));
+        cbx_expe_maquina_virtual.setSelectedItem("Nominal");
+
+        cbx_calidad.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_calidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_calidad.setSelectedItem("Nominal");
 
-        cbx_expe_maquina_virtual.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", " " }));
-        cbx_expe_maquina_virtual.setSelectedItem("Nominal");
+        cbx_experiencia.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_experiencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
+        cbx_experiencia.setSelectedItem("Nominal");
 
-        cbx_expe_lenguaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", " " }));
-        cbx_expe_lenguaje.setSelectedItem("Nominal");
+        cbx_analisis.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_analisis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
+        cbx_analisis.setSelectedItem("Nominal");
 
-        cbx_tecnicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto", " " }));
+        lbl_atrib_proyecto.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
+        lbl_atrib_proyecto.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_atrib_proyecto.setText("Atributos del Proyecto:");
+
+        jLabel13.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Técnicas actualizadas de programación:");
+
+        cbx_tecnicas.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_tecnicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_tecnicas.setSelectedItem("Nominal");
 
+        jLabel14.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Utilización de herramientas de software:");
+
+        cbx_herramientas.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         cbx_herramientas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_herramientas.setSelectedItem("Nominal");
 
-        cbx_rest_tiempo_desarrollo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto", " " }));
-        cbx_rest_tiempo_desarrollo.setSelectedIndex(2);
+        jLabel15.setFont(new java.awt.Font("Cambria Math", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Restricciones de tiempo de desarrollo:");
+
+        cbx_rest_tiempo_desarrollo.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
+        cbx_rest_tiempo_desarrollo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Bajo", "Bajo", "Nominal", "Alto", "Muy Alto" }));
         cbx_rest_tiempo_desarrollo.setSelectedItem("Nominal");
 
-        jLabel16.setText("FACTOR AJUSTE");
-
+        btn_aceptar.setBackground(new java.awt.Color(45, 60, 80));
+        btn_aceptar.setForeground(new java.awt.Color(255, 255, 255));
         btn_aceptar.setText("Aceptar");
+        btn_aceptar.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         btn_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_aceptarActionPerformed(evt);
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbl_atrib_proyecto)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel11)))
+                                    .addComponent(lbl_atrib_personal))
+                                .addGap(94, 94, 94)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbx_expe_lenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbx_expe_maquina_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbx_herramientas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbx_tecnicas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbx_rest_tiempo_desarrollo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbl_atrib_software)
+                                .addComponent(lbl_atrib_hardware)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(cbx_restr_tiempo_ejecucion, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel5)
+                                                .addComponent(jLabel6)
+                                                .addComponent(jLabel7))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(cbx_analisis, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(cbx_tiempo_respuesta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(cbx_vol_maquina_virtual, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(cbx_rest_memoria_virtual, 0, 99, Short.MAX_VALUE))
+                                                .addComponent(cbx_experiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(cbx_calidad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cbx_complejidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbx_base_datos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbx_fiabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(74, 74, 74))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(170, 170, 170))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_atrib_software)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(cbx_base_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbx_fiabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbx_complejidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(13, 13, 13)
+                .addComponent(lbl_atrib_hardware)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(cbx_restr_tiempo_ejecucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cbx_rest_memoria_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(cbx_vol_maquina_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(cbx_tiempo_respuesta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_analisis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_experiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_calidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_expe_maquina_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_expe_lenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_atrib_personal)))
+                .addGap(18, 18, 18)
+                .addComponent(lbl_atrib_proyecto)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbx_tecnicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbx_herramientas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbx_rest_tiempo_desarrollo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(66, 66, 66)
+                .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_atrib_personal)
-                            .addComponent(lbl_atrib_hardware)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbl_atrib_proyecto))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbl_atrib_software))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7))))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cbx_fiabilidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_base_datos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_complejidad, 0, 103, Short.MAX_VALUE)
-                                .addComponent(cbx_restr_tiempo_ejecucion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_rest_memoria_virtual, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_vol_maquina_virtual, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_analisis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_experiencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_calidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_expe_maquina_virtual, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbx_expe_lenguaje, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(cbx_tiempo_respuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbx_tecnicas, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel14)
-                                        .addComponent(jLabel15)))
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cbx_herramientas, 0, 110, Short.MAX_VALUE)
-                                    .addComponent(cbx_rest_tiempo_desarrollo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel16)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addGap(3, 3, 3)
-                .addComponent(lbl_atrib_software)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(cbx_base_datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cbx_complejidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_atrib_hardware)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(cbx_restr_tiempo_ejecucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(cbx_rest_memoria_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(cbx_vol_maquina_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(cbx_tiempo_respuesta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(lbl_atrib_personal)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(cbx_analisis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(cbx_experiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(cbx_calidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_expe_maquina_virtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(cbx_fiabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(cbx_expe_lenguaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(lbl_atrib_proyecto)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(cbx_tecnicas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(cbx_herramientas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(cbx_rest_tiempo_desarrollo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -360,9 +468,8 @@ public class FactorAjuste extends javax.swing.JFrame {
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         obtenerAtributos();
-               
-        this.setVisible(false);
 
+        this.setVisible(false);
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     /**
@@ -402,7 +509,7 @@ public class FactorAjuste extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_aceptar;
+    private rsbuttoncustom.RSButtonCustom btn_aceptar;
     private javax.swing.JComboBox<String> cbx_analisis;
     private javax.swing.JComboBox<String> cbx_base_datos;
     private javax.swing.JComboBox<String> cbx_calidad;
@@ -434,6 +541,8 @@ public class FactorAjuste extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbl_atrib_hardware;
     private javax.swing.JLabel lbl_atrib_personal;
     private javax.swing.JLabel lbl_atrib_proyecto;
@@ -444,59 +553,59 @@ public class FactorAjuste extends javax.swing.JFrame {
         //https://es.stackoverflow.com/questions/8456/crear-una-lista-clave-valor-en-java
         int atributo = 0;
         ArrayList<Integer> atributos = new ArrayList<>();
-        
-        atributo  = cbx_fiabilidad.getSelectedIndex();
+
+        atributo = cbx_fiabilidad.getSelectedIndex();
         atributos.add(atributo);
         cbx_fiabilidad.setSelectedIndex(atributo);
-        atributo  = cbx_base_datos.getSelectedIndex();
+        atributo = cbx_base_datos.getSelectedIndex();
         atributos.add(atributo);
         cbx_base_datos.setSelectedIndex(atributo);
-        atributo  = cbx_complejidad.getSelectedIndex();
+        atributo = cbx_complejidad.getSelectedIndex();
         atributos.add(atributo);
         cbx_complejidad.setSelectedIndex(atributo);
-        atributo  = cbx_restr_tiempo_ejecucion.getSelectedIndex();
+        atributo = cbx_restr_tiempo_ejecucion.getSelectedIndex();
         atributos.add(atributo);
         cbx_restr_tiempo_ejecucion.setSelectedIndex(atributo);
-        atributo  = cbx_rest_memoria_virtual.getSelectedIndex();
+        atributo = cbx_rest_memoria_virtual.getSelectedIndex();
         atributos.add(atributo);
         cbx_rest_memoria_virtual.setSelectedIndex(atributo);
-        atributo  = cbx_vol_maquina_virtual.getSelectedIndex();
+        atributo = cbx_vol_maquina_virtual.getSelectedIndex();
         atributos.add(atributo);
         cbx_vol_maquina_virtual.setSelectedIndex(atributo);
-        atributo  = cbx_tiempo_respuesta.getSelectedIndex();
+        atributo = cbx_tiempo_respuesta.getSelectedIndex();
         atributos.add(atributo);
         cbx_tiempo_respuesta.setSelectedIndex(atributo);
-        atributo  = cbx_analisis.getSelectedIndex();
+        atributo = cbx_analisis.getSelectedIndex();
         atributos.add(atributo);
         cbx_analisis.setSelectedIndex(atributo);
-        atributo  = cbx_experiencia.getSelectedIndex();
+        atributo = cbx_experiencia.getSelectedIndex();
         atributos.add(atributo);
         cbx_experiencia.setSelectedIndex(atributo);
-        atributo  = cbx_calidad.getSelectedIndex();
+        atributo = cbx_calidad.getSelectedIndex();
         atributos.add(atributo);
         cbx_calidad.setSelectedIndex(atributo);
-        atributo  = cbx_expe_maquina_virtual.getSelectedIndex();
+        atributo = cbx_expe_maquina_virtual.getSelectedIndex();
         atributos.add(atributo);
         cbx_expe_maquina_virtual.setSelectedIndex(atributo);
-        atributo  = cbx_expe_lenguaje.getSelectedIndex();
+        atributo = cbx_expe_lenguaje.getSelectedIndex();
         atributos.add(atributo);
         cbx_expe_lenguaje.setSelectedIndex(atributo);
-        atributo  = cbx_tecnicas.getSelectedIndex();
+        atributo = cbx_tecnicas.getSelectedIndex();
         atributos.add(atributo);
         cbx_tecnicas.setSelectedIndex(atributo);
-        atributo  = cbx_herramientas.getSelectedIndex();
+        atributo = cbx_herramientas.getSelectedIndex();
         atributos.add(atributo);
         cbx_herramientas.setSelectedIndex(atributo);
-        atributo  = cbx_rest_tiempo_desarrollo.getSelectedIndex();
+        atributo = cbx_rest_tiempo_desarrollo.getSelectedIndex();
         atributos.add(atributo);
         cbx_rest_tiempo_desarrollo.setSelectedIndex(atributo);
-        
+
         double fa = con_reporte.calcularFactorAjuste(atributos);
-        
+
         if (fa > 0) {
             VentanaPrincipal.factor_ajuste = fa;
         }
-        
+
         VentanaPrincipal.atributos = atributos;
     }
 }
