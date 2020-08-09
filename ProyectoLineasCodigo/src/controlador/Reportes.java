@@ -36,8 +36,6 @@ public class Reportes {
             estimacion_esfuerzo = valores_modo.get(0) * Math.pow(nkloc, valores_modo.get(1));
         }
 
-        System.out.println(estimacion_esfuerzo);
-
         return estimacion_esfuerzo * mx;
     }
 
@@ -49,7 +47,7 @@ public class Reportes {
         valores_modo = devolverModo(modo);
 
         if (valores_modo != null) {
-            tiempo_desarrollo = valores_modo.get(2) * esfuerzo * valores_modo.get(3);
+            tiempo_desarrollo = valores_modo.get(2) * Math.pow(esfuerzo, valores_modo.get(3));
         }
 
         return tiempo_desarrollo;

@@ -48,7 +48,7 @@ public class Archivos {
                         if (lenguaje.equals("Proyecto PHP") && extension.equals("php")) {
                             archivos.add(archivo);
                         } else {
-                            if (lenguaje.equals("Proyecto Node") && extension.equals(".js")) {
+                            if (lenguaje.equals("Proyecto Node js") && extension.equals(".js")) {
                                 archivos.add(archivo);
                             } else {
                                 if (lenguaje.equals("Proyecto Java") && extension.equals("ava")) {
@@ -61,9 +61,9 @@ public class Archivos {
                     } else {
 
                         String nombre = archivo.getName();
-                        System.out.println(nombre);
                         if (!nombre.equalsIgnoreCase("lib") || !nombre.equalsIgnoreCase("vendor") || !nombre.equalsIgnoreCase("middleware")) {
                             archivos.addAll(buscarArchivos(archivo, lenguaje));
+                            
                         }
 
                     }
