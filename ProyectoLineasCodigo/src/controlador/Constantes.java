@@ -18,7 +18,7 @@ public class Constantes {
     public ArrayList<Double> organico(){
         
         ArrayList<Double> org = new ArrayList<Double>();
-        org.add(2.4);
+        org.add(3.2);
         org.add(1.05);
         org.add(2.5);
         org.add(0.38);

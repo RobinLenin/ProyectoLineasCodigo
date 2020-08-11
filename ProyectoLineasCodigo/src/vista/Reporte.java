@@ -8,6 +8,7 @@ package vista;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
@@ -50,6 +51,7 @@ public class Reporte extends javax.swing.JFrame {
         String modo = VentanaPrincipal.jtf_modo_metrica.getText();
 
         double mx = VentanaPrincipal.factor_ajuste;
+        System.out.println(mx);
 
         esfuerzo = con_reportes.esfuerzo(lines, modo, mx);
         esfuerzo = Math.round(esfuerzo * Math.pow(10, 2)) / Math.pow(10, 2);
@@ -68,7 +70,7 @@ public class Reporte extends javax.swing.JFrame {
         jtf_personas.setText(Double.toString(numero_personas));
 
         double salario_medio = Double.parseDouble(VentanaPrincipal.jtf_salario.getText().toString());
-        costo = (Double) numero_personas * salario_medio;
+        costo = (Double) numero_personas * salario_medio * tiempo_desarrollo;
 
         costo = Math.round(costo * Math.pow(10, 2)) / Math.pow(10, 2);
 
@@ -92,7 +94,6 @@ public class Reporte extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jtf_personas = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jtf_costo_proyecto = new javax.swing.JTextField();
         lbl_n_lineas = new javax.swing.JLabel();
         jtf_n_lineas = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -100,6 +101,7 @@ public class Reporte extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new rsbuttoncustom.RSButtonCustom();
         btn_generar_reporte = new rsbuttoncustom.RSButtonCustom();
+        jtf_costo_proyecto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reporte");
@@ -147,8 +149,6 @@ public class Reporte extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Costo total del proyecto:");
-
-        jtf_costo_proyecto.setEditable(false);
 
         lbl_n_lineas.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         lbl_n_lineas.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,15 +206,13 @@ public class Reporte extends javax.swing.JFrame {
                                     .addComponent(jtf_esfuerzo)
                                     .addComponent(jtf_n_lineas)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(130, 130, 130)
-                                .addComponent(jtf_costo_proyecto))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(301, 301, 301)
-                                .addComponent(jtf_personas))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtf_personas)
+                                    .addComponent(jtf_costo_proyecto)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,6 +297,7 @@ public class Reporte extends javax.swing.JFrame {
                 reporte.open();
 
                 PdfPTable tabla = new PdfPTable(4);
+                
                 reporte.add(new Paragraph("Reporte Cocomo II", negrillaFont18));
                 reporte.add(Chunk.NEWLINE);
 
@@ -308,8 +307,11 @@ public class Reporte extends javax.swing.JFrame {
 
                 String strDateFormat = "dd-MM-yyyy"; 
                 SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat); 
-
+                
                 reporte.add(new Paragraph("Fecha: " + objSDF.format(fecha), normalFont));
+                reporte.add(Chunk.NEWLINE);
+                reporte.add(new Paragraph("El presente documento emitido por la empresa 'JAR' indica en la siguiente Tabla las estimaciones de costo generadas a partir de la Métrica"
+                        + " de líneas de Código.", normalFont));
                 reporte.add(Chunk.NEWLINE);
                 reporte.add(new Paragraph("Tabla de estimación: ", normalFont));
                 reporte.add(Chunk.NEWLINE);
@@ -331,6 +333,8 @@ public class Reporte extends javax.swing.JFrame {
                 reporte.close();
 
                 JOptionPane.showMessageDialog(null, "Reporte Creado");
+                
+                this.dispose();
 
             } catch (DocumentException | HeadlessException | FileNotFoundException e) {
                 JOptionPane.showMessageDialog(null, "Error al Generar Reporte");
