@@ -61,7 +61,14 @@ public class Archivos {
                     } else {
 
                         String nombre = archivo.getName();
-                        if (!nombre.equalsIgnoreCase("lib") || !nombre.equalsIgnoreCase("vendor") || !nombre.equalsIgnoreCase("middleware")) {
+                        
+                        nombre = nombre.toLowerCase();
+                        
+                        
+                        if (!nombre.equalsIgnoreCase("lib") && !nombre.equalsIgnoreCase("vendor") 
+                                && !nombre.equalsIgnoreCase("framework")
+                                && !nombre.equalsIgnoreCase("librerias")) {
+                            
                             archivos.addAll(buscarArchivos(archivo, lenguaje));
                             
                         }

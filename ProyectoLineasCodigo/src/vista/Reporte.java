@@ -51,14 +51,15 @@ public class Reporte extends javax.swing.JFrame {
         String modo = VentanaPrincipal.jtf_modo_metrica.getText();
 
         double mx = VentanaPrincipal.factor_ajuste;
-        System.out.println(mx);
 
         esfuerzo = con_reportes.esfuerzo(lines, modo, mx);
+        
         esfuerzo = Math.round(esfuerzo * Math.pow(10, 2)) / Math.pow(10, 2);
 
         jtf_esfuerzo.setText(Double.toString(esfuerzo));
 
         tiempo_desarrollo = con_reportes.tiempoDesarrollo(esfuerzo, modo);
+        
         tiempo_desarrollo = Math.round(tiempo_desarrollo * Math.pow(10, 2)) / Math.pow(10, 2);
 
         jtf_tiempo.setText(Double.toString(tiempo_desarrollo));
@@ -70,6 +71,7 @@ public class Reporte extends javax.swing.JFrame {
         jtf_personas.setText(Double.toString(numero_personas));
 
         double salario_medio = Double.parseDouble(VentanaPrincipal.jtf_salario.getText().toString());
+        
         costo = (Double) numero_personas * salario_medio * tiempo_desarrollo;
 
         costo = Math.round(costo * Math.pow(10, 2)) / Math.pow(10, 2);
@@ -291,7 +293,9 @@ public class Reporte extends javax.swing.JFrame {
                 PdfWriter.getInstance(reporte, new FileOutputStream(ruta + "/Desktop/Reporte_COCOMOII.pdf"));
 
                 Font negrillaFont18 = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
+                
                 Font negrillaFont14 = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.BOLD);
+                
                 Font normalFont = new Font(Font.FontFamily.TIMES_ROMAN, 14);
 
                 reporte.open();
@@ -299,6 +303,7 @@ public class Reporte extends javax.swing.JFrame {
                 PdfPTable tabla = new PdfPTable(4);
                 
                 reporte.add(new Paragraph("Reporte Cocomo II", negrillaFont18));
+                
                 reporte.add(Chunk.NEWLINE);
 
                 reporte.add(new Paragraph("Nombre del proyecto: " + nombre_proyecto, normalFont));
@@ -306,29 +311,41 @@ public class Reporte extends javax.swing.JFrame {
                 Date fecha = new Date(); 
 
                 String strDateFormat = "dd-MM-yyyy"; 
+                
                 SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat); 
                 
                 reporte.add(new Paragraph("Fecha: " + objSDF.format(fecha), normalFont));
+                
                 reporte.add(Chunk.NEWLINE);
+                
                 reporte.add(new Paragraph("El presente documento emitido por la empresa 'JAR' indica en la siguiente Tabla las estimaciones de costo generadas a partir de la Métrica"
                         + " de líneas de Código.", normalFont));
                 reporte.add(Chunk.NEWLINE);
+                
                 reporte.add(new Paragraph("Tabla de estimación: ", normalFont));
+                
                 reporte.add(Chunk.NEWLINE);
+                
                 tabla.addCell(new Phrase("KLOC", negrillaFont14));
+                
                 tabla.addCell(new Phrase("Esfuerzo/Mes", negrillaFont14));
+                
                 tabla.addCell(new Phrase("Tiempo/Mes", negrillaFont14));
+                
                 tabla.addCell(new Phrase("Persona/Mes", negrillaFont14));
 
                 tabla.addCell(Double.toString(lines));
+                
                 tabla.addCell(Double.toString(esfuerzo));
+                
                 tabla.addCell(Double.toString(tiempo_desarrollo));
+                
                 tabla.addCell(Double.toString(numero_personas));
                 reporte.add(tabla);
-                reporte.add(Chunk.NEWLINE);
-                reporte.add(new Paragraph("Costo total del Proyecto: " + Double.toString(costo), negrillaFont14));
-
                 
+                reporte.add(Chunk.NEWLINE);
+                
+                reporte.add(new Paragraph("Costo total del Proyecto: " + Double.toString(costo), negrillaFont14));
 
                 reporte.close();
 
@@ -337,9 +354,11 @@ public class Reporte extends javax.swing.JFrame {
                 this.dispose();
 
             } catch (DocumentException | HeadlessException | FileNotFoundException e) {
+                
                 JOptionPane.showMessageDialog(null, "Error al Generar Reporte");
             }
         } else {
+            
             JOptionPane.showMessageDialog(null, "No existe Proyecto");
         }
 

@@ -16,6 +16,7 @@ public class Reportes {
     public static double kloc(int n_lineas) {
 
         double dividendo = 1000;
+        
         double nkloc = 0.0;
 
         nkloc = n_lineas / dividendo;
@@ -27,13 +28,15 @@ public class Reportes {
     public static double esfuerzo(double nkloc, String modo, double mx) {
 
         ArrayList<Double> valores_modo = null;
+        
         double estimacion_esfuerzo = 0;
 
         valores_modo = devolverModo(modo);
-        System.out.println(modo);
 
         if (valores_modo != null) {
+            
             estimacion_esfuerzo = valores_modo.get(0) * Math.pow(nkloc, valores_modo.get(1));
+            
         }
 
         return estimacion_esfuerzo * mx;
@@ -42,6 +45,7 @@ public class Reportes {
     public static double tiempoDesarrollo(double esfuerzo, String modo) {
 
         ArrayList<Double> valores_modo = null;
+        
         double tiempo_desarrollo = 0.0;
 
         valores_modo = devolverModo(modo);
@@ -55,15 +59,23 @@ public class Reportes {
 
     public static ArrayList<Double> devolverModo(String modo) {
         ArrayList<Double> valores_modo = null;
+        
         Constantes mod = new Constantes();
+        
         if (modo.equalsIgnoreCase("Organico")) {
+            
             valores_modo = mod.organico();
+            
         } else {
             if (modo.equalsIgnoreCase("Semilibre")) {
+                
                 valores_modo = mod.semilibre();
+                
             } else {
                 if (modo.equalsIgnoreCase("Rigido")) {
+                    
                     valores_modo = mod.rigido();
+                    
                 } else {
                     return valores_modo;
 
@@ -76,6 +88,7 @@ public class Reportes {
 
     public static double calcularFactorAjuste(ArrayList<Integer> atributos) {
         double factor_ajuste = 0.0;
+        
         ArrayList<Double> fa = new ArrayList<>();
 
         Constantes constantes = new Constantes();
