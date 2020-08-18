@@ -21,13 +21,15 @@ import modelo.Archivo;
  */
 public class Archivos {
 
-   public static Collection<File> buscarArchivos(File carpeta, String lenguaje) {
+    public static Collection<File> buscarArchivos(File carpeta, String lenguaje) {
 
         String string_ruta = "";
 
         Set<File> archivos = new HashSet<File>();
+        
+        try {
 
-        if (carpeta.exists() && carpeta.isDirectory()) {
+            if (carpeta.exists() && carpeta.isDirectory()) {
             if (carpeta.listFiles().equals("")) {
 
                 return archivos;
@@ -78,6 +80,10 @@ public class Archivos {
 
             }
 
+        }
+            
+        } catch (NullPointerException e) {
+            return archivos;
         }
 
         return archivos;
