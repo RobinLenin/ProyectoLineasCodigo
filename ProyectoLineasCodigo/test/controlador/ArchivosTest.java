@@ -77,19 +77,33 @@ public class ArchivosTest {
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertNotNull(result);     
     }
+    
+    @Test
+    public void testBuscarArchivosNull() {
+        System.out.println("testBuscarArchivosNull");
+        File carpeta = null;
+        String lenguaje = null;
+        Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
+        assertEquals(0, result.size());
+    }
 
     /**
      * Test of calcularLineasCodigo method, of class Archivos.
      */
     @Test
-    public void testCalcularLineasCodigo() {
+    public void testCalcularLineasCodigoNull() {
         System.out.println("calcularLineasCodigo");
         Archivo a = null;
-        int expResult = 0;
         int result = Archivos.calcularLineasCodigo(a);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(0, result);
+    }
+    
+    @Test
+    public void testCalcularLineasCodigoExito() {
+        System.out.println("calcularLineasCodigo");
+        Archivo a = null;
+        int result = Archivos.calcularLineasCodigo(a);
+        assertEquals(0, result);
     }
     
 }
