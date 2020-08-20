@@ -32,6 +32,7 @@ public class ReportesTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -42,21 +43,46 @@ public class ReportesTest {
      * Test of kloc method, of class Reportes.
      */
     @Test
-    public void testKloc() {
-        System.out.println("kloc");
-        int n_lineas = 0;
-        double expResult = 0.0;
+    public void testKlocPositivo() {
+        System.out.println("testKlocExito");
+        int n_lineas = 2000;
+        double expResult = 2;
         double result = Reportes.kloc(n_lineas);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    @Test
+    public void testKlocCero() {
+        System.out.println("kloc");
+        int n_lineas = 0;
+        double expResult = 0;
+        double result = Reportes.kloc(n_lineas);
+        assertEquals(expResult, result, 0.0);
+    }
+    @Test
+    public void testKlocNegativo() {
+        System.out.println("kloc");
+        int n_lineas = -2000;
+        double expResult = 0;
+        double result = Reportes.kloc(n_lineas);
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
      * Test of esfuerzo method, of class Reportes.
      */
     @Test
-    public void testEsfuerzo() {
+    public void testEsfuerzoPositivo() {
+        System.out.println("esfuerzo");
+        double nkloc = 2.0;
+        String modo = "Organico";
+        double mx = 1.0;
+        double expResult = 6.625695512584817;
+        double result = Reportes.esfuerzo(nkloc, modo, mx);
+        assertEquals(expResult, result, 6.625695512584817);
+    }
+    
+    @Test
+    public void testEsfuerzoCero() {
         System.out.println("esfuerzo");
         double nkloc = 0.0;
         String modo = "";
@@ -64,51 +90,149 @@ public class ReportesTest {
         double expResult = 0.0;
         double result = Reportes.esfuerzo(nkloc, modo, mx);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
+    
+    @Test
+    public void testEsfuerzoNegativo() {
+        System.out.println("esfuerzo");
+        double nkloc = -2.0;
+        String modo = "";
+        double mx = -1.0;
+        double expResult = 0.0;
+        double result = Reportes.esfuerzo(nkloc, modo, mx);
+        assertEquals(expResult, result, 0.0);
+    }
     /**
      * Test of tiempoDesarrollo method, of class Reportes.
      */
     @Test
-    public void testTiempoDesarrollo() {
+    public void testTiempoDesarrolloPositivo() {
+        System.out.println("tiempoDesarrollo");
+        double esfuerzo = 5.0;
+        String modo = "Organico";
+        double expResult = 4.608383471622163;
+        double result = Reportes.tiempoDesarrollo(esfuerzo, modo);
+        assertEquals(expResult, result, 4.608383471622163);
+    }
+    
+     @Test
+    public void testTiempoDesarrolloCero() {
         System.out.println("tiempoDesarrollo");
         double esfuerzo = 0.0;
         String modo = "";
         double expResult = 0.0;
         double result = Reportes.tiempoDesarrollo(esfuerzo, modo);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+    
+     @Test
+    public void testTiempoDesarrolloNegativo() {
+        System.out.println("tiempoDesarrollo");
+        double esfuerzo = -2.0;
+        String modo = "";
+        double expResult = 0.0;
+        double result = Reportes.tiempoDesarrollo(esfuerzo, modo);
+        assertEquals(expResult, result, 0.0);
+    }
+    
 
     /**
      * Test of devolverModo method, of class Reportes.
      */
     @Test
-    public void testDevolverModo() {
+    public void testDevolverModoNull() {
         System.out.println("devolverModo");
-        String modo = "";
+        String modo = "inesperado";
         ArrayList<Double> expResult = null;
         ArrayList<Double> result = Reportes.devolverModo(modo);
+        System.out.println(result);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testDevolverModoOrganico() {
+        System.out.println("devolverModo");
+        String modo = "Organico";
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(3.2);
+        expResult.add(1.05);
+        expResult.add(2.5);
+        expResult.add(0.38);
+        ArrayList<Double> result = Reportes.devolverModo("Organico");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testDevolverModoSemilibre() {
+        System.out.println("devolverModo");
+        String modo = "Semilibre";
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(3.0);
+        expResult.add(1.12);
+        expResult.add(2.5);
+        expResult.add(0.35);
+        ArrayList<Double> result = Reportes.devolverModo("Semilibre");
+        assertEquals(expResult, result);
+    }
+    
+    
+    @Test
+    public void testDevolverModoRigido() {
+        System.out.println("devolverModo");
+        String modo = "Rigido";
+        ArrayList<Double> expResult = new ArrayList<>();
+        expResult.add(2.8);
+        expResult.add(1.2);
+        expResult.add(2.5);
+        expResult.add(0.32);
+        ArrayList<Double> result = Reportes.devolverModo("Rigido");
+        assertEquals(expResult, result);
     }
 
     /**
      * Test of calcularFactorAjuste method, of class Reportes.
      */
     @Test
-    public void testCalcularFactorAjuste() {
+    public void testCalcularFactorAjusteMayor15() {
         System.out.println("calcularFactorAjuste");
-        ArrayList<Integer> atributos = null;
+        ArrayList<Integer> atributos = new ArrayList<Integer>();
+        
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        
         double expResult = 0.0;
         double result = Reportes.calcularFactorAjuste(atributos);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0);
     }
     
+    @Test
+    public void testCalcularFactorAjusteMenor15() {
+        System.out.println("calcularFactorAjuste");
+        ArrayList<Integer> atributos = new ArrayList<Integer>();
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);
+        
+        double expResult = 0.0;
+        double result = Reportes.calcularFactorAjuste(atributos);
+        assertEquals(expResult, result, 0);
+    }
+    
+    @Test
+    public void testCalcularFactorAjusteIgual15() {
+        System.out.println("calcularFactorAjuste");
+        ArrayList<Integer> atributos = new ArrayList<Integer>();
+        
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);atributos.add(1);
+        atributos.add(1);atributos.add(1);atributos.add(1);
+        
+        double expResult = 1.0559999999999998;
+        double result = Reportes.calcularFactorAjuste(atributos);
+        assertEquals(expResult, result, 0);
+    }
 }
