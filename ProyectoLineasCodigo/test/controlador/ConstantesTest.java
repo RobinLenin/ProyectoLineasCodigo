@@ -45,11 +45,13 @@ public class ConstantesTest {
     public void testOrganico() {
         System.out.println("organico");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(3.2);
+        expResult.add(1.05);
+        expResult.add(2.5);
+        expResult.add(0.38);
         ArrayList<Double> result = instance.organico();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,11 +61,13 @@ public class ConstantesTest {
     public void testSemilibre() {
         System.out.println("semilibre");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(3.0);
+        expResult.add(1.12);
+        expResult.add(2.5);
+        expResult.add(0.35);
         ArrayList<Double> result = instance.semilibre();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,13 +77,14 @@ public class ConstantesTest {
     public void testRigido() {
         System.out.println("rigido");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(2.8);
+        expResult.add(1.2);
+        expResult.add(2.5);
+        expResult.add(0.32);
         ArrayList<Double> result = instance.rigido();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
     /**
      * Test of fiabilidad method, of class Constantes.
      */
@@ -87,11 +92,14 @@ public class ConstantesTest {
     public void testFiabilidad() {
         System.out.println("fiabilidad");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.75);
+        expResult.add(0.88);
+        expResult.add(1.0);
+        expResult.add(1.15);
+        expResult.add(1.40);
         ArrayList<Double> result = instance.fiabilidad();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -99,13 +107,14 @@ public class ConstantesTest {
      */
     @Test
     public void testBaseDatos() {
-        System.out.println("baseDatos");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.94);
+        expResult.add(1.0);
+        expResult.add(1.08);
+        expResult.add(1.16);
         ArrayList<Double> result = instance.baseDatos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -115,11 +124,15 @@ public class ConstantesTest {
     public void testComplejidad() {
         System.out.println("complejidad");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.70);
+        expResult.add(0.85);
+        expResult.add(1.0);
+        expResult.add(1.15);
+        expResult.add(1.30);
+        expResult.add(1.65);
         ArrayList<Double> result = instance.complejidad();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -129,11 +142,13 @@ public class ConstantesTest {
     public void testRestrTiempoEjecucion() {
         System.out.println("restrTiempoEjecucion");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.0);
+        expResult.add(1.11);
+        expResult.add(1.30);
+        expResult.add(1.66);
         ArrayList<Double> result = instance.restrTiempoEjecucion();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -143,11 +158,13 @@ public class ConstantesTest {
     public void testRestMemoriaVirtual() {
         System.out.println("restMemoriaVirtual");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.0);
+        expResult.add(1.06);
+        expResult.add(1.21);
+        expResult.add(1.56);
         ArrayList<Double> result = instance.restMemoriaVirtual();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -155,13 +172,14 @@ public class ConstantesTest {
      */
     @Test
     public void testVolMaquinaVirtual() {
-        System.out.println("volMaquinaVirtual");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.87);
+        expResult.add(1.0);
+        expResult.add(1.15);
+        expResult.add(1.30);
         ArrayList<Double> result = instance.volMaquinaVirtual();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -171,11 +189,13 @@ public class ConstantesTest {
     public void testTiempoRespuesta() {
         System.out.println("tiempoRespuesta");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.87);
+        expResult.add(1.0);
+        expResult.add(1.07);
+        expResult.add(1.15);
         ArrayList<Double> result = instance.tiempoRespuesta();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -185,11 +205,14 @@ public class ConstantesTest {
     public void testAnalisis() {
         System.out.println("analisis");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.46);
+        expResult.add(1.19);
+        expResult.add(1.0);
+        expResult.add(0.86);
+        expResult.add(0.71);
         ArrayList<Double> result = instance.analisis();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -199,11 +222,14 @@ public class ConstantesTest {
     public void testExperiencia() {
         System.out.println("experiencia");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.29);
+        expResult.add(1.13);
+        expResult.add(1.0);
+        expResult.add(0.91);
+        expResult.add(0.82);
         ArrayList<Double> result = instance.experiencia();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -213,11 +239,14 @@ public class ConstantesTest {
     public void testCalidad() {
         System.out.println("Calidad");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.42);
+        expResult.add(1.17);
+        expResult.add(1.0);
+        expResult.add(0.86);
+        expResult.add(0.70);
         ArrayList<Double> result = instance.Calidad();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -227,11 +256,13 @@ public class ConstantesTest {
     public void testExpeMaquinaVirtual() {
         System.out.println("expeMaquinaVirtual");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.21);
+        expResult.add(1.10);
+        expResult.add(1.0);
+        expResult.add(0.90);
         ArrayList<Double> result = instance.expeMaquinaVirtual();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -241,11 +272,13 @@ public class ConstantesTest {
     public void testExpeLenguaje() {
         System.out.println("expeLenguaje");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.14);
+        expResult.add(1.07);
+        expResult.add(1.0);
+        expResult.add(0.95);
         ArrayList<Double> result = instance.expeLenguaje();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -255,11 +288,14 @@ public class ConstantesTest {
     public void testTecnicas() {
         System.out.println("tecnicas");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.24);
+        expResult.add(1.10);
+        expResult.add(1.0);
+        expResult.add(0.91);
+        expResult.add(0.82);
         ArrayList<Double> result = instance.tecnicas();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -269,11 +305,14 @@ public class ConstantesTest {
     public void testHerramientas() {
         System.out.println("herramientas");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.24);
+        expResult.add(1.10);
+        expResult.add(1.0);
+        expResult.add(0.91);
+        expResult.add(0.83);
         ArrayList<Double> result = instance.herramientas();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -283,11 +322,14 @@ public class ConstantesTest {
     public void testRestTiempoDesarrollo() {
         System.out.println("restTiempoDesarrollo");
         Constantes instance = new Constantes();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.22);
+        expResult.add(1.08);
+        expResult.add(1.0);
+        expResult.add(1.04);
+        expResult.add(1.10);
         ArrayList<Double> result = instance.restTiempoDesarrollo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
