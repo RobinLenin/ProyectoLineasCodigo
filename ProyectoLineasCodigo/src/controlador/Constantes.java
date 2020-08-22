@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase define el controlador de Constantes que posee métodos de obtención de atributos constantes.
+ * @author: Alexandra López
+ * @version: 1.0
  */
 package controlador;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author robin
- */
 public class Constantes {
     
     /**
