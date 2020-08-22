@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase define el controlador de Archivos para buscar y leer archivos.
+ * @author: Robin Cordova
+ * @version: 1.0
  */
 package controlador;
 
@@ -20,7 +20,13 @@ import modelo.Archivo;
  * @author robin
  */
 public class Archivos {
-
+    
+    /**
+     * Método que devuelve el listado de archivos según lenguaje de programación
+     * @param carpeta  El parámetro carpeta define la carpeta seleccionada de tipo File.
+     * @param lenguaje  El parámetro lenguaje defineel tipo de lenguaje de programación para buscar los archivos.
+     * @return El listado de archivos (archivos) de tipo Collection.
+     */
     public static Collection<File> buscarArchivos(File carpeta, String lenguaje) {
 
         String string_ruta = "";
@@ -87,7 +93,12 @@ public class Archivos {
 
         return archivos;
     }
-
+    
+    /**
+     * Método que devuelve el número de líneas de
+     * @param a  El parámetro a define el archivo a leer número de líneas tipo File.
+     * @return El número de líneas del archivo de tipo entero.
+     */
     public static int calcularLineasCodigo(Archivo a) {
         if (a != null) {
             String lenguaje = a.getLenguaje_progamacion();
