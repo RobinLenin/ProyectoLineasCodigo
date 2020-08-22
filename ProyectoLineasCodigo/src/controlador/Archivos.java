@@ -119,147 +119,152 @@ public class Archivos {
 
                 boolean comentario_largo = false;
 
-                while ((linea = buffer_reader.readLine()) != null) {
+                if (buffer_reader != null) {
+                    while ((linea = buffer_reader.readLine()) != null) {
 
-                    linea = linea.trim();
+                        linea = linea.trim();
 
-                    if (comentario_largo == false) {
+                        if (comentario_largo == false) {
 
-                        if (linea.length() > 0) {
+                            if (linea.length() > 0) {
 
-                            lineas_codigo++;
+                                lineas_codigo++;
+
+                            }
+                        }
+
+                        switch (lenguaje) {
+                            case "Proyecto PHP":
+
+                                if (linea.length() > 1) {
+
+                                    if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                        comentario_largo = true;
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                    if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                        comentario_largo = false;
+
+                                    }
+                                }
+
+                                if (comentario_largo == false) {
+
+                                    if (linea.length() > 1) {
+
+                                        if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
+
+                                            lineas_no_codigo++;
+
+                                        }
+                                        if (linea.equalsIgnoreCase("?>") || linea.equalsIgnoreCase("<?phps")) {
+
+                                            lineas_no_codigo++;
+
+                                        }
+                                    }
+
+                                    if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                            || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                }
+
+                                break;
+
+                            case "Proyecto Java":
+
+                                if (linea.length() > 1) {
+
+                                    if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                        comentario_largo = true;
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                    if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                        comentario_largo = false;
+
+                                    }
+                                }
+
+                                if (comentario_largo == false) {
+
+                                    if (linea.length() > 1) {
+
+                                        if (linea.substring(0, 2).equalsIgnoreCase("//")) {
+
+                                            lineas_no_codigo++;
+
+                                        }
+                                    }
+
+                                    if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                            || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                }
+
+                                break;
+
+                            case "Proyecto Node":
+                                if (linea.length() > 1) {
+
+                                    if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
+
+                                        comentario_largo = true;
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                    if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
+
+                                        comentario_largo = false;
+
+                                    }
+                                }
+
+                                if (comentario_largo == false) {
+
+                                    if (linea.length() > 1) {
+
+                                        if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
+
+                                            lineas_no_codigo++;
+
+                                        }
+                                    }
+
+                                    if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
+                                            || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
+
+                                        lineas_no_codigo++;
+
+                                    }
+                                }
+
+                                break;
+                            default:
+                                lineas_no_codigo = 0;
+                                break;
 
                         }
+                        linea = "";
                     }
-
-                    switch (lenguaje) {
-                        case "Proyecto PHP":
-
-                            if (linea.length() > 1) {
-
-                                if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
-
-                                    comentario_largo = true;
-
-                                    lineas_no_codigo++;
-
-                                }
-                                if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
-
-                                    comentario_largo = false;
-
-                                }
-                            }
-
-                            if (comentario_largo == false) {
-
-                                if (linea.length() > 1) {
-
-                                    if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
-
-                                        lineas_no_codigo++;
-
-                                    }
-                                    if (linea.equalsIgnoreCase("?>") || linea.equalsIgnoreCase("<?phps")) {
-
-                                        lineas_no_codigo++;
-
-                                    }
-                                }
-
-                                if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
-                                        || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
-
-                                    lineas_no_codigo++;
-
-                                }
-                            }
-
-                            break;
-
-                        case "Proyecto Java":
-
-                            if (linea.length() > 1) {
-
-                                if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
-
-                                    comentario_largo = true;
-
-                                    lineas_no_codigo++;
-
-                                }
-                                if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
-
-                                    comentario_largo = false;
-
-                                }
-                            }
-
-                            if (comentario_largo == false) {
-
-                                if (linea.length() > 1) {
-
-                                    if (linea.substring(0, 2).equalsIgnoreCase("//")) {
-
-                                        lineas_no_codigo++;
-
-                                    }
-                                }
-
-                                if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
-                                        || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
-
-                                    lineas_no_codigo++;
-
-                                }
-                            }
-
-                            break;
-
-                        case "Proyecto Node":
-                            if (linea.length() > 1) {
-
-                                if (linea.substring(0, 2).equalsIgnoreCase("/*")) {
-
-                                    comentario_largo = true;
-
-                                    lineas_no_codigo++;
-
-                                }
-                                if (linea.substring(linea.length() - 2, linea.length()).equalsIgnoreCase("*/")) {
-
-                                    comentario_largo = false;
-
-                                }
-                            }
-
-                            if (comentario_largo == false) {
-
-                                if (linea.length() > 1) {
-
-                                    if (linea.substring(0, 2).equalsIgnoreCase("//") || linea.substring(0, 1).equalsIgnoreCase("#")) {
-
-                                        lineas_no_codigo++;
-
-                                    }
-                                }
-
-                                if (linea.equalsIgnoreCase("{") || linea.equalsIgnoreCase("}") || linea.replaceAll("\\s", "").equalsIgnoreCase("else{")
-                                        || linea.replaceAll("\\s", "").equalsIgnoreCase("}else{") || linea.replaceAll("\\s", "").equalsIgnoreCase("try{") || linea.equalsIgnoreCase("else") || linea.equalsIgnoreCase("break;")) {
-
-                                    lineas_no_codigo++;
-
-                                }
-                            }
-
-                            break;
-                        default:
-                            lineas_no_codigo = 0;
-                            break;
-
-                    }
-                    linea = "";
+                } else {
+                    return 0;
                 }
+
             } catch (IOException e) {
 
                 e.printStackTrace();
@@ -268,7 +273,7 @@ public class Archivos {
             return lineas_codigo - lineas_no_codigo;
         }
         return 0;
-        
+
     }
 
 }

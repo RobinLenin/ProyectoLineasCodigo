@@ -164,11 +164,25 @@ public class ArchivosTest {
     }
     
     @Test
-    public void testCalcularLineasCodigoExito() {
+    public void testCalcularLineasCodigonotFoundRuta() {
         System.out.println("calcularLineasCodigo");
-        Archivo a = null;
+        String ruta = System.getProperty("user.home");
+        Archivo a = new Archivo();
+        a.setRuta(ruta + "/Documents/NetBeansProjects/Prueba/archivofalso.js");
+        a.setLenguaje_progamacion("Proyecto Java");
         int result = Archivos.calcularLineasCodigo(a);
         assertEquals(0, result);
+    }
+    
+    @Test
+    public void testCalcularLineasCodigonoExito() {
+        System.out.println("calcularLineasCodigo");
+        String ruta = System.getProperty("user.home");
+        Archivo a = new Archivo();
+        a.setRuta(ruta + "/Documents/NetBeansProjects/Prueba/archivo.java");
+        a.setLenguaje_progamacion("Proyecto Java");
+        int result = Archivos.calcularLineasCodigo(a);
+        assertEquals(3, result);
     }
     
 }
