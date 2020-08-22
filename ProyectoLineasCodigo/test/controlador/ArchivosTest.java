@@ -49,7 +49,7 @@ public class ArchivosTest {
     public void testBuscarArchivosCarpetaNull() {
         System.out.println("testBuscarArchivosCarpetaNull");
         File carpeta = null;
-        String lenguaje = "";
+        String lenguaje = "Proyecto PHP";
         Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);
@@ -58,26 +58,90 @@ public class ArchivosTest {
     @Test
     public void testBuscarArchivosCarpetaVacia() {
         System.out.println("testBuscarArchivosCarpetaVacia");
-        File carpeta = new File("Ejemplo");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/Nueva_carpeta");
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        String lenguaje = "";
+        String lenguaje = "Proyecto Java";
         Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);
     }
     
+
+    
     @Test
-    public void testBuscarArchivosExito() {
-        System.out.println("testBuscarArchivosExito");
-        File carpeta = new File("\"C:\\Users\\robin\\Documents\\LineasCodigo\"");
+    public void testBuscarArchivosLenguajeX() {
+        System.out.println("testBuscarArchivosLenguajeX");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
+        String lenguaje = "Proyecto Python";
+        System.out.println(carpeta.isDirectory());
+        System.out.println(carpeta.exists());
+        Set<File> archivos = new HashSet<File>();
+        Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
+        assertEquals(archivos, result);     
+    }
+    
+    @Test
+    public void testBuscarArchivosLenguajeNull() {
+        System.out.println("testBuscarArchivosLenguajeNull");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
+        String lenguaje = null;
+        System.out.println(carpeta.isDirectory());
+        System.out.println(carpeta.exists());
+        Set<File> archivos = new HashSet<File>();
+        Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
+        assertEquals(archivos, result);     
+    }
+    
+    @Test
+    public void testBuscarArchivosProyectoJava() {
+        System.out.println("testBuscarArchivosLenguajeNull");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = "Proyecto Java";
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
+        Set<File> archivos = new HashSet<File>();
+        File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.java");
+        archivos.add(archivo);
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
-        assertNotNull(result);     
+        assertEquals(archivos, result);     
     }
     
+    @Test
+    public void testBuscarArchivosProyectoPHP() {
+        System.out.println("testBuscarArchivosLenguajeNull");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
+        String lenguaje = "Proyecto PHP";
+        System.out.println(carpeta.isDirectory());
+        System.out.println(carpeta.exists());
+        Set<File> archivos = new HashSet<File>();
+        File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.php");
+        archivos.add(archivo);
+        Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
+        System.out.println(result);
+        System.out.println(archivos);
+        assertEquals(archivos, result);      
+    }
+    
+    @Test
+    public void testBuscarArchivosProyectoNode() {
+        System.out.println("testBuscarArchivosLenguajeNull");
+        String ruta = System.getProperty("user.home");
+        File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
+        String lenguaje = "Proyecto Node js";
+        System.out.println(carpeta.isDirectory());
+        System.out.println(carpeta.exists());
+        Set<File> archivos = new HashSet<File>();
+        File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.js");
+        archivos.add(archivo);
+        Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
+        assertEquals(archivos, result);     
+    }
     @Test
     public void testBuscarArchivosNull() {
         System.out.println("testBuscarArchivosNull");
@@ -86,6 +150,7 @@ public class ArchivosTest {
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(0, result.size());
     }
+    
 
     /**
      * Test of calcularLineasCodigo method, of class Archivos.
