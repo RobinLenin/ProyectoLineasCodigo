@@ -22,26 +22,19 @@ import static org.junit.Assert.*;
  * @author robin
  */
 public class ArchivosTest {
+
+    private String ruta;
+    Set<File> archivos;
     
     public ArchivosTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
     @Before
     public void setUp() {
+        ruta = System.getProperty("user.home");
+        archivos = new HashSet<File>();
     }
     
-    @After
-    public void tearDown() {
-    }
-
     /**
      * Test of buscarArchivos method, of class Archivos.
      */
@@ -50,7 +43,6 @@ public class ArchivosTest {
         System.out.println("testBuscarArchivosCarpetaNull");
         File carpeta = null;
         String lenguaje = "Proyecto PHP";
-        Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);
     }
@@ -58,12 +50,10 @@ public class ArchivosTest {
     @Test
     public void testBuscarArchivosCarpetaVacia() {
         System.out.println("testBuscarArchivosCarpetaVacia");
-        String ruta = System.getProperty("user.home");
         File carpeta = new File(ruta + "/Documents/Nueva_carpeta");
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
         String lenguaje = "Proyecto Java";
-        Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);
     }
@@ -73,12 +63,10 @@ public class ArchivosTest {
     @Test
     public void testBuscarArchivosLenguajeX() {
         System.out.println("testBuscarArchivosLenguajeX");
-        String ruta = System.getProperty("user.home");
         File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = "Proyecto Python";
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);     
     }
@@ -86,25 +74,21 @@ public class ArchivosTest {
     @Test
     public void testBuscarArchivosLenguajeNull() {
         System.out.println("testBuscarArchivosLenguajeNull");
-        String ruta = System.getProperty("user.home");
         File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = null;
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        Set<File> archivos = new HashSet<File>();
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
         assertEquals(archivos, result);     
     }
     
     @Test
     public void testBuscarArchivosProyectoJava() {
-        System.out.println("testBuscarArchivosLenguajeNull");
-        String ruta = System.getProperty("user.home");
+        System.out.println("testBuscarArchivosProyectoJava");
         File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = "Proyecto Java";
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        Set<File> archivos = new HashSet<File>();
         File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.java");
         archivos.add(archivo);
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
@@ -113,13 +97,11 @@ public class ArchivosTest {
     
     @Test
     public void testBuscarArchivosProyectoPHP() {
-        System.out.println("testBuscarArchivosLenguajeNull");
-        String ruta = System.getProperty("user.home");
+        System.out.println("testBuscarArchivosProyectoPHP");
         File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = "Proyecto PHP";
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        Set<File> archivos = new HashSet<File>();
         File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.php");
         archivos.add(archivo);
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
@@ -130,13 +112,11 @@ public class ArchivosTest {
     
     @Test
     public void testBuscarArchivosProyectoNode() {
-        System.out.println("testBuscarArchivosLenguajeNull");
-        String ruta = System.getProperty("user.home");
+        System.out.println("testBuscarArchivosProyectoNode");
         File carpeta = new File(ruta + "/Documents/NetBeansProjects/Prueba");
         String lenguaje = "Proyecto Node js";
         System.out.println(carpeta.isDirectory());
         System.out.println(carpeta.exists());
-        Set<File> archivos = new HashSet<File>();
         File archivo = new File(ruta + "/Documents/NetBeansProjects/Prueba/archivo.js");
         archivos.add(archivo);
         Collection<File> result = Archivos.buscarArchivos(carpeta, lenguaje);
@@ -157,7 +137,7 @@ public class ArchivosTest {
      */
     @Test
     public void testCalcularLineasCodigoNull() {
-        System.out.println("calcularLineasCodigo");
+        System.out.println("testCalcularLineasCodigoNull");
         Archivo a = null;
         int result = Archivos.calcularLineasCodigo(a);
         assertEquals(0, result);
@@ -165,8 +145,7 @@ public class ArchivosTest {
     
     @Test
     public void testCalcularLineasCodigonotFoundRuta() {
-        System.out.println("calcularLineasCodigo");
-        String ruta = System.getProperty("user.home");
+        System.out.println("testCalcularLineasCodigonotFoundRuta");
         Archivo a = new Archivo();
         a.setRuta(ruta + "/Documents/NetBeansProjects/Prueba/archivofalso.js");
         a.setLenguaje_progamacion("Proyecto Java");
@@ -176,8 +155,7 @@ public class ArchivosTest {
     
     @Test
     public void testCalcularLineasCodigonoExito() {
-        System.out.println("calcularLineasCodigo");
-        String ruta = System.getProperty("user.home");
+        System.out.println("testCalcularLineasCodigonoExito");
         Archivo a = new Archivo();
         a.setRuta(ruta + "/Documents/NetBeansProjects/Prueba/archivo.java");
         a.setLenguaje_progamacion("Proyecto Java");
