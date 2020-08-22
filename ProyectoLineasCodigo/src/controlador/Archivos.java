@@ -95,7 +95,7 @@ public class Archivos {
     }
     
     /**
-     * Método que devuelve el número de líneas de
+     * Método que devuelve el número de líneas
      * @param a  El parámetro a define el archivo a leer número de líneas tipo File.
      * @return El número de líneas del archivo de tipo entero.
      */

@@ -12,7 +12,12 @@ import java.util.ArrayList;
  * @author robin
  */
 public class Reportes {
-
+        
+    /**
+     * Método que devuelve el valor del número de lineas en kloc
+     * @param n_lineas  El parámetro n_lineas define el número de líneas por unidad.
+     * @return El número de líneas por mil (kloc) de tipo double.
+     */
     public static double kloc(int n_lineas) {
         if (n_lineas >= 0) {
 
@@ -27,6 +32,13 @@ public class Reportes {
         return 0;
     }
 
+     /**
+     * Método que devuelve el valor calculado del esfuerzo (persona/mes).
+     * @param nkloc El parámetro nkloc define el número de líneas por mil.
+     * @param modo El parámetro modo define modo (organico, semilibre, rigido)
+     * @param mx El parámetro mx define el valor calculado de factor ajuste.
+     * @return El número esfuerzo (persona/mes) de tipo double.
+     */
     public static double esfuerzo(double nkloc, String modo, double mx) {
         if (nkloc > 0 && mx > 0) {
 
@@ -51,7 +63,13 @@ public class Reportes {
         }
         return 0;
     }
-
+    
+    /**
+     * Método que devuelve el tiempo estimado de desarrollo del proyecto aumentando el 25% de imprevistos (mes).
+     * @param modo El parámetro modo define modo (organico, semilibre, rigido)
+     * @param esfuerzo El parámetro esfuerzo define el valor calculado esfuerzo.
+     * @return El número de meses estimado para el proyecto de tipo double.
+     */
     public static double tiempoDesarrollo(double esfuerzo, String modo) {
 
         if (esfuerzo > 0) {
@@ -64,6 +82,7 @@ public class Reportes {
 
             if (valores_modo != null) {
                 tiempo_desarrollo = valores_modo.get(2) * Math.pow(esfuerzo, valores_modo.get(3));
+                tiempo_desarrollo = tiempo_desarrollo * 1.25;
             }
 
             return tiempo_desarrollo;
@@ -74,7 +93,12 @@ public class Reportes {
         }
         return 0;
     }
-
+    
+    /**
+     * Método que devuelve los valores del costantes del mode de desarrollo (organico, semilibre y rigido).
+     * @param modo El parámetro modo define modo (organico, semilibre, rigido)
+     * @return El valores costanstes del modo de tipo ArrayList de Double.
+     */
     public static ArrayList<Double> devolverModo(String modo) {
         ArrayList<Double> valores_modo = null;
 
@@ -104,6 +128,11 @@ public class Reportes {
             return valores_modo;
     }
 
+     /**
+     * Método que devuelve el tiempo el valor de m(x) o factor de ajuste.
+     * @param atributos El parámetro define un Array List con los valores de los 15 atributos.
+     * @return El calculo de m(x) de tipo double.
+     */
     public static double calcularFactorAjuste(ArrayList<Integer> atributos) {
         double factor_ajuste = 0.0;
         ArrayList<Double> fa = new ArrayList<>();
