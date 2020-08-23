@@ -507,6 +507,9 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JTextField" name="jtxf_total_numero_lineas">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_total">
           <Properties>

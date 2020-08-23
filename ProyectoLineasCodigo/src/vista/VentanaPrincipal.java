@@ -257,6 +257,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             tbl_mostrar_lineas_cod.getColumnModel().getColumn(2).setMaxWidth(130);
         }
 
+        jtxf_total_numero_lineas.setEditable(false);
+
         lbl_total.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         lbl_total.setForeground(new java.awt.Color(255, 255, 255));
         lbl_total.setText("Total Líneas:");
