@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase define las pruebas corespondientes a Reporte que realiza el cálculo de estimaciones para el proyecto.
+ * @author: Alexandra López
+ * @version: 1.0
  */
 package controlador;
 
@@ -13,10 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author robin
- */
 public class ReportesTest {
     
     public ReportesTest() {
