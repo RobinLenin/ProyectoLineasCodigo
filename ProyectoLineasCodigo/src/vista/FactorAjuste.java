@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase es la interfaz del factor ajuste, donde el usuario escoge valores para los 15 atributos.
+ * @author: Alexandra López
+ * @version: 1.0
  */
 package vista;
 
@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author robin
- */
 public class FactorAjuste extends javax.swing.JFrame {
 
     Reportes con_reporte;

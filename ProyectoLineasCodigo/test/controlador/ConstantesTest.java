@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase define las pruebas corespondientes a Constantes que realiza brinda los valores para calcular la estimación de costo de proyecto.
+ * @author: Johnney Bermeo
+ * @version: 1.0
  */
 package controlador;
 
@@ -13,10 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author robin
- */
 public class ConstantesTest {
     
     public ConstantesTest() {
