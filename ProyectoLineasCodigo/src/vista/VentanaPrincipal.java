@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Esta clase es la interfaz principal del programa..
+ * @author: Robin Cordova
+ * @version: 1.0
  */
 package vista;
 
@@ -18,10 +18,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import modelo.Archivo;
 
-/**
- *
- * @author Johnney
- */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     public static int n_lines = 0;
@@ -494,14 +490,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
         String salario = jtf_salario.getText();
         int parse_numero = 0;
-
+        
         if (salario.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese un salario");
         } else {
             try {
                 parse_numero = Integer.parseInt(salario);
-                Reporte reporte = new Reporte();
-                reporte.setVisible(true);
+                if (parse_numero > 1) {
+                    Reporte reporte = new Reporte();
+                    reporte.setVisible(true);
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Ingrese un salario positivo");
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Ingrese un salario válido");
             }

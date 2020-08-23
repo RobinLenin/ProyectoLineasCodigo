@@ -172,7 +172,7 @@ public class Archivos {
                                             lineas_no_codigo++;
 
                                         }
-                                        if (linea.equalsIgnoreCase("?>") || linea.equalsIgnoreCase("<?phps")) {
+                                        if (linea.equalsIgnoreCase("?>") || linea.equalsIgnoreCase("<?php") || linea.equalsIgnoreCase("<?")) {
 
                                             lineas_no_codigo++;
 
